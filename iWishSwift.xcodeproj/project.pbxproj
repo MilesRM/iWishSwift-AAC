@@ -15,10 +15,9 @@
 		E048F2AF1DBB813600C16B08 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E048F2AE1DBB813600C16B08 /* Category.swift */; };
 		E048F2B11DBB825E00C16B08 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E048F2B01DBB825E00C16B08 /* Item.swift */; };
 		E048F2B31DBB834700C16B08 /* SubItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E048F2B21DBB834700C16B08 /* SubItem.swift */; };
+		E09224D51DBCEF15004718A1 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09224D41DBCEF15004718A1 /* TextCell.swift */; };
 		E0BA92571DBCD44D00DC4446 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BA92561DBCD44D00DC4446 /* CategoryViewController.swift */; };
 		E0F7C2961DBC5F2100D59AD0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F7C2951DBC5F2100D59AD0 /* MainViewController.swift */; };
-		E0F7C2991DBC621000D59AD0 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F7C2971DBC621000D59AD0 /* CollectionViewCell.swift */; };
-		E0F7C29A1DBC621000D59AD0 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F7C2981DBC621000D59AD0 /* CollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +33,9 @@
 		E048F2AE1DBB813600C16B08 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		E048F2B01DBB825E00C16B08 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		E048F2B21DBB834700C16B08 /* SubItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubItem.swift; sourceTree = "<group>"; };
+		E09224D41DBCEF15004718A1 /* TextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
 		E0BA92561DBCD44D00DC4446 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		E0F7C2951DBC5F2100D59AD0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		E0F7C2971DBC621000D59AD0 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		E0F7C2981DBC621000D59AD0 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +95,8 @@
 				E045C4621DBB6D8D009BDFCE /* LaunchScreen.storyboard */,
 				E045C4651DBB6D8D009BDFCE /* Info.plist */,
 				E0F7C2951DBC5F2100D59AD0 /* MainViewController.swift */,
-				E0F7C2971DBC621000D59AD0 /* CollectionViewCell.swift */,
-				E0F7C2981DBC621000D59AD0 /* CollectionViewCell.xib */,
 				E0BA92561DBCD44D00DC4446 /* CategoryViewController.swift */,
+				E09224D41DBCEF15004718A1 /* TextCell.swift */,
 			);
 			path = iWishSwift;
 			sourceTree = "<group>";
@@ -179,7 +176,6 @@
 			files = (
 				E045C4641DBB6D8D009BDFCE /* LaunchScreen.storyboard in Resources */,
 				E045C4611DBB6D8D009BDFCE /* Assets.xcassets in Resources */,
-				E0F7C29A1DBC621000D59AD0 /* CollectionViewCell.xib in Resources */,
 				E045C45F1DBB6D8D009BDFCE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,9 +238,9 @@
 				E048F2B11DBB825E00C16B08 /* Item.swift in Sources */,
 				E048F2B31DBB834700C16B08 /* SubItem.swift in Sources */,
 				E0BA92571DBCD44D00DC4446 /* CategoryViewController.swift in Sources */,
-				E0F7C2991DBC621000D59AD0 /* CollectionViewCell.swift in Sources */,
 				E045C45A1DBB6D8D009BDFCE /* AppDelegate.swift in Sources */,
 				E0F7C2961DBC5F2100D59AD0 /* MainViewController.swift in Sources */,
+				E09224D51DBCEF15004718A1 /* TextCell.swift in Sources */,
 				E048F2AF1DBB813600C16B08 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

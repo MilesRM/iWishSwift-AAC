@@ -16,6 +16,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     @IBOutlet var MainCollectionView: UICollectionView!
 
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,8 +24,13 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.MainCollectionView.delegate = self
         self.MainCollectionView.dataSource = self
         
-        let nib = UINib(nibName: "CollectionViewCell", bundle: nil)
-        self.MainCollectionView!.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
+        flowLayout.scrollDirection = .vertical
+        flowLayout.minimumLineSpacing = 0
+        flowLayout.minimumInteritemSpacing = 0
+        flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        
+        //let nib = UINib(nibName: "CollectionViewCell", bundle: nil)
+        //self.MainCollectionView!.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
         
     }
 
@@ -36,7 +42,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TextCell
         
         cell.label.text = mainLabels[indexPath.row]
                 
@@ -57,6 +63,19 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         let cellSize: CGFloat = self.view.frame.size.width / 2 - 5
         
         return CGSize(width: cellSize, height: cellSize)
+        
+        
+        /*
+        let totalwidth = collectionView.bounds.size.width;
+        let numberOfCellsPerRow = 2
+        let oddEven = indexPath.row / numberOfCellsPerRow % 2
+        let dimensions = CGFloat(Int(totalwidth) / numberOfCellsPerRow)
+        if (oddEven == 0) {
+            return CGSize(width: dimensions, height: dimensions)
+        } else {
+            return CGSize(width: dimensions, height: dimensions / 2)
+        }*/
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
