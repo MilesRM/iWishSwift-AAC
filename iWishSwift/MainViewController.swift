@@ -15,8 +15,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     var mainLabels = ["溝通","活動(日記)","常用句","自我介紹(回答)","是不是(選擇)","文章"]
 
     @IBOutlet var MainCollectionView: UICollectionView!
-
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -82,7 +82,26 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         print(indexPath.row)
         
+        performSegue(withIdentifier:"category", sender: self)
+
     }
     
 
-}
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "category"
+        {
+            if let destViewController = segue.destination as? CategoryViewController {
+                destViewController.fromMain = "123"
+            }
+        }
+    }
+    /*
+    override func prepare(for segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if segue.identifier == "category" {
+            //get destination controller
+            var destViewController = segue.destination as! CategoryViewController;
+            destViewController.receiveData = "SegueData!!!!!";
+        }
+    }*/
+    
+   }

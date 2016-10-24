@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Main-->
         <scene sceneID="i0E-0H-svO">
             <objects>
-                <viewController id="eBg-ms-aDd" customClass="MainViewController" customModule="iWishSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Main" id="eBg-ms-aDd" customClass="MainViewController" customModule="iWishSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aoa-BM-7dr"/>
                         <viewControllerLayoutGuide type="bottom" id="ujM-9V-oCQ"/>
@@ -37,7 +37,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DH9-6c-v2s">
-                                                    <frame key="frameInset" minY="7" width="300" height="200"/>
+                                                    <frame key="frameInset" minY="-4" width="300" height="200"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
@@ -48,6 +48,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="label" destination="DH9-6c-v2s" id="k0w-ba-0NV"/>
+                                            <segue destination="cvd-FR-XDL" kind="show" identifier="category" action="showDetailViewController:sender:" id="0pE-Ky-iCO"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -55,7 +56,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ef4-ti-cS9"/>
+                    <navigationItem key="navigationItem" title="善善的溝通板" id="ef4-ti-cS9"/>
                     <connections>
                         <outlet property="MainCollectionView" destination="cv8-Of-T9z" id="iKV-Cq-Qx0"/>
                         <outlet property="flowLayout" destination="jVb-El-rvS" id="04m-kt-Lsz"/>
@@ -64,6 +65,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L1V-Rs-l57" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="210.15625" y="-202.1484375"/>
+        </scene>
+        <!--Category-->
+        <scene sceneID="fsv-MA-hX2">
+            <objects>
+                <viewController title="Category" id="cvd-FR-XDL" customClass="CategoryViewController" customModule="iWishSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ITm-pi-VDr"/>
+                        <viewControllerLayoutGuide type="bottom" id="7IU-LZ-QYD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FIZ-5S-QrE">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Qm-Gs-Ull">
+                                <frame key="frameInset" minY="72" width="768" height="952"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="COF-Z1-lQ5">
+                                    <size key="itemSize" width="300" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="NSi-pY-qJD" customClass="TextCell" customModule="iWishSwift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4A-xk-qg2">
+                                                    <frame key="frameInset" width="300" height="200"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="善善的溝通板" id="vsl-VP-SU2">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Col-fe-aTG">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wZx-6N-hgX">
+                                <rect key="frame" x="578" y="7" width="170" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="9Qm-Gs-Ull" id="Cp9-0W-ega"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KrJ-hu-IbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1004.6875" y="-202.1484375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yst-p7-Te2">
@@ -75,10 +139,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="yA3-bo-45f">
-                        <rect key="frame" x="0.0" y="980" width="768" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
                     <connections>
                         <segue destination="eBg-ms-aDd" kind="relationship" relationship="rootViewController" id="wod-vQ-641"/>
                     </connections>
