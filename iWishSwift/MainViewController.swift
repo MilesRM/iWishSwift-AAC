@@ -82,7 +82,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         print(indexPath.row)
         
-        performSegue(withIdentifier:"category", sender: self)
+        //performSegue(withIdentifier:"category", sender: self)
 
     }
     
@@ -90,18 +90,16 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "category"
         {
+            /*
+            let destViewController = segue.destination as! CategoryViewController
+            let cell = sender as! TextCell
+            let indexPath = MainCollectionView?.indexPath(for: cell)
+            */
             if let destViewController = segue.destination as? CategoryViewController {
                 destViewController.fromMain = "123"
             }
         }
     }
-    /*
-    override func prepare(for segue: UIStoryboardSegue!, sender: AnyObject!) {
-        if segue.identifier == "category" {
-            //get destination controller
-            var destViewController = segue.destination as! CategoryViewController;
-            destViewController.receiveData = "SegueData!!!!!";
-        }
-    }*/
+
     
    }
