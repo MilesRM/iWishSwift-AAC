@@ -17,6 +17,12 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet var MainCollectionView: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
+    
+    
+    fileprivate let leftAndRightPadding: CGFloat = 32.0
+    fileprivate let numberOfItemsPerRow: CGFloat = 3.0
+    fileprivate let heightAdjustment: CGFloat = 30.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,10 +30,16 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.MainCollectionView.delegate = self
         self.MainCollectionView.dataSource = self
         
+        /*
         flowLayout.scrollDirection = .vertical
         flowLayout.minimumLineSpacing = 0
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        */
+        
+        let width = (MainCollectionView!.frame.width - leftAndRightPadding) / numberOfItemsPerRow
+        let layout = flowLayout as UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: width, height: width + heightAdjustment)
         
         //let nib = UINib(nibName: "CollectionViewCell", bundle: nil)
         //self.MainCollectionView!.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
@@ -43,8 +55,15 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TextCell
+
+        cell.layer.cornerRadius = 10
+        cell.clipsToBounds = true
+        cell.layer.borderColor = UIColor.white.cgColor
+        cell.layer.borderWidth = 3
         
         cell.label.text = mainLabels[indexPath.row]
+    
+        
                 
         return cell
     }
@@ -65,7 +84,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         return CGSize(width: cellSize, height: cellSize)
         
         
-        /*
+      /*
         let totalwidth = collectionView.bounds.size.width;
         let numberOfCellsPerRow = 2
         let oddEven = indexPath.row / numberOfCellsPerRow % 2
