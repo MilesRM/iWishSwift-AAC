@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -52,10 +51,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="label" destination="DH9-6c-v2s" id="k0w-ba-0NV"/>
-                                            <segue destination="cvd-FR-XDL" kind="showDetail" identifier="category" id="jfo-kF-AqB">
-                                                <segue key="commit" inheritsFrom="parent" id="zlA-mG-KbE"/>
-                                                <segue key="preview" inheritsFrom="commit" id="Xuf-qe-3jp"/>
-                                            </segue>
+                                            <segue destination="cvd-FR-XDL" kind="show" identifier="category" id="aq2-Mf-Cbx"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -82,30 +78,30 @@
                         <viewControllerLayoutGuide type="bottom" id="7IU-LZ-QYD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FIZ-5S-QrE">
-                        <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Qm-Gs-Ull">
-                                <rect key="frame" x="-324" y="28" width="1027" height="740"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="COF-Z1-lQ5">
-                                    <size key="itemSize" width="300" height="200"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="COF-Z1-lQ5">
+                                    <size key="itemSize" width="200" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="NSi-pY-qJD" customClass="TextCell" customModule="iWishSwift" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4A-xk-qg2">
-                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                     <nil key="textColor"/>
@@ -149,7 +145,4 @@
             <point key="canvasLocation" x="-555.46875" y="-202.1484375"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="jfo-kF-AqB"/>
-    </inferredMetricsTieBreakers>
 </document>

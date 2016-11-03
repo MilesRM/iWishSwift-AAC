@@ -14,6 +14,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var categoryLabels = ["1","2","3","4","5","6","7","8","9","10","11","12"]
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.delegate = self
@@ -36,7 +39,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TextCell
         
-        cell.label?.text = "test"
+        cell.label?.text = categoryLabels[indexPath.row]
         
         return cell
     }
@@ -46,15 +49,20 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5;
+        return categoryLabels.count;
     }
     
     // set cell size
     // must set UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellSize: CGFloat = self.view.frame.size.width / 2 - 5
+        let nbCol = 4
         
-        return CGSize(width: cellSize, height: cellSize)
+        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+        let totalSpace = flowLayout.sectionInset.left
+            + flowLayout.sectionInset.right
+            + (flowLayout.minimumInteritemSpacing * CGFloat(nbCol - 1))
+        let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(nbCol))
+        return CGSize(width: size, height: size)
         
         
     }
