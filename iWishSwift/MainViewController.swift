@@ -31,27 +31,30 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.MainCollectionView.dataSource = self
         
         /*
-        flowLayout.scrollDirection = .vertical
+        flowLayout.scrollDirection = .horizontal
         flowLayout.minimumLineSpacing = 0
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        */
+ */
         
+        /*
         let width = (MainCollectionView!.frame.width - leftAndRightPadding) / numberOfItemsPerRow
         let layout = flowLayout as UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width + heightAdjustment)
-        
+        */
         //let nib = UINib(nibName: "CollectionViewCell", bundle: nil)
         //self.MainCollectionView!.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
         
+        
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TextCell
@@ -101,7 +104,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         print(indexPath.row)
         
-        //performSegue(withIdentifier:"category", sender: self)
+        performSegue(withIdentifier:"category", sender: self)
 
     }
     
@@ -119,6 +122,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             }
         }
     }
+
 
     
    }
