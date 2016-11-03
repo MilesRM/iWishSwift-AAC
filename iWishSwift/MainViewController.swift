@@ -17,11 +17,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet var MainCollectionView: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
-    
-    
-    fileprivate let leftAndRightPadding: CGFloat = 32.0
-    fileprivate let numberOfItemsPerRow: CGFloat = 3.0
-    fileprivate let heightAdjustment: CGFloat = 30.0
+    //fileprivate let leftAndRightPadding: CGFloat = 32.0
+    //fileprivate let numberOfItemsPerRow: CGFloat = 3.0
+    //fileprivate let heightAdjustment: CGFloat = 30.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,8 +63,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.layer.borderWidth = 3
         
         cell.label.text = mainLabels[indexPath.row]
-    
-        
                 
         return cell
     }
@@ -83,13 +79,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     // must set UICollectionViewDelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //let cellSize: CGFloat = self.view.frame.size.width / 2 - 5
-        
-        //return CGSize(width: cellSize, height: cellSize)
-        
+    
         let nbCol = 3
         
-        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
         let totalSpace = flowLayout.sectionInset.left
             + flowLayout.sectionInset.right
             + (flowLayout.minimumInteritemSpacing * CGFloat(nbCol - 1))
@@ -98,27 +90,34 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         
     
     }
-    
-    /*
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        print(indexPath.row)
-        
-        //performSegue(withIdentifier:"category", sender: self)
 
-    }*/
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+        //print(mainLabels[indexPath.row])
+    }
+    
+    // MARK:- Selected Cell IndexPath
+
+    func getIndexPathForSelectedCell() -> IndexPath? {
+        
+        var indexPath:IndexPath?
+        
+        if MainCollectionView.indexPathsForSelectedItems!.count > 0 {
+            indexPath = MainCollectionView.indexPathsForSelectedItems![0]
+        }
+        return indexPath
+    }
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let indexPath = getIndexPathForSelectedCell()
+        
         if segue.identifier == "category"
         {
-            /*
-            let destViewController = segue.destination as! CategoryViewController
-            let cell = sender as! TextCell
-            let indexPath = MainCollectionView?.indexPath(for: cell)
-            */
             if let destViewController = segue.destination as? CategoryViewController {
-                destViewController.fromMain = "123"
+                destViewController.fromMain = mainLabels[(indexPath?.row)!]
             }
         }
     }

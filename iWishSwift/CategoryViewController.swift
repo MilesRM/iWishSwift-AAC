@@ -8,11 +8,12 @@
 
 import UIKit
 
-private let reuseIdentifier = "CollectionViewCell"
+private let reuseIdentifier = "cell"
 
 class CategoryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     var categoryLabels = ["1","2","3","4","5","6","7","8","9","10","11","12"]
 
@@ -30,7 +31,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     var fromMain = "";
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(fromMain)
+        
+        self.navigationItem.title = fromMain
+        //print(fromMain)
     }
 
     
@@ -39,7 +42,17 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TextCell
         
-        cell.label?.text = categoryLabels[indexPath.row]
+        cell.layer.cornerRadius = 10
+        cell.clipsToBounds = true
+        cell.layer.borderColor = UIColor.white.cgColor
+        cell.layer.borderWidth = 3
+        
+        //print(categoryLabels[indexPath.row])
+        
+        //if let labelName = cell.label{
+        //    labelName.text = categoryLabels[indexPath.row]
+        //}
+        cell.label.text = categoryLabels[indexPath.row]
         
         return cell
     }
@@ -57,7 +70,6 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let nbCol = 4
         
-        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
         let totalSpace = flowLayout.sectionInset.left
             + flowLayout.sectionInset.right
             + (flowLayout.minimumInteritemSpacing * CGFloat(nbCol - 1))

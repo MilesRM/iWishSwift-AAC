@@ -92,7 +92,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="NSi-pY-qJD" customClass="TextCell" customModule="iWishSwift" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="NSi-pY-qJD" customClass="TextCell" customModule="iWishSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -109,6 +109,9 @@
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <connections>
+                                            <outlet property="label" destination="e4A-xk-qg2" id="JNt-i1-BK2"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -120,6 +123,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="9Qm-Gs-Ull" id="Cp9-0W-ega"/>
+                        <outlet property="flowLayout" destination="COF-Z1-lQ5" id="lOF-tS-5ud"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KrJ-hu-IbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
