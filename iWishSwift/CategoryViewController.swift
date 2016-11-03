@@ -14,14 +14,18 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
-    
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    @IBOutlet weak var switchButton: UISwitch!
+
     var categoryLabels = ["1","2","3","4","5","6","7","8","9","10","11","12"]
 
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        
+        //addButton.isEnabled = false
     }
 
     override func didReceiveMemoryWarning() {
