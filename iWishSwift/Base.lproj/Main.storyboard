@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dbq-ja-cyU">
-    <device id="ipad9_7" orientation="portrait">
+    <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,12 +19,12 @@
                         <viewControllerLayoutGuide type="bottom" id="ujM-9V-oCQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="y1J-8A-WOP">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cv8-Of-T9z">
-                                <rect key="frame" x="0.0" y="64" width="768" height="960"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="jVb-El-rvS">
                                     <size key="itemSize" width="200" height="100"/>
@@ -34,7 +35,7 @@
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="V9k-cc-pbT" customClass="TextCell" customModule="iWishSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
@@ -51,6 +52,10 @@
                                         </view>
                                         <connections>
                                             <outlet property="label" destination="DH9-6c-v2s" id="k0w-ba-0NV"/>
+                                            <segue destination="cvd-FR-XDL" kind="showDetail" identifier="category" id="jfo-kF-AqB">
+                                                <segue key="commit" inheritsFrom="parent" id="zlA-mG-KbE"/>
+                                                <segue key="preview" inheritsFrom="commit" id="Xuf-qe-3jp"/>
+                                            </segue>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -62,7 +67,6 @@
                     <connections>
                         <outlet property="MainCollectionView" destination="cv8-Of-T9z" id="iKV-Cq-Qx0"/>
                         <outlet property="flowLayout" destination="jVb-El-rvS" id="04m-kt-Lsz"/>
-                        <segue destination="cvd-FR-XDL" kind="show" identifier="category" action="showDetailViewController:sender:" id="Elj-g2-mhk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L1V-Rs-l57" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -78,11 +82,11 @@
                         <viewControllerLayoutGuide type="bottom" id="7IU-LZ-QYD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FIZ-5S-QrE">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Qm-Gs-Ull">
-                                <rect key="frame" x="0.0" y="72" width="768" height="952"/>
+                                <rect key="frame" x="-324" y="28" width="1027" height="740"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="COF-Z1-lQ5">
@@ -124,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KrJ-hu-IbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1004.6875" y="-202.1484375"/>
+            <point key="canvasLocation" x="1004.2968749999999" y="-202.34375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yst-p7-Te2">
@@ -145,4 +149,7 @@
             <point key="canvasLocation" x="-555.46875" y="-202.1484375"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="jfo-kF-AqB"/>
+    </inferredMetricsTieBreakers>
 </document>

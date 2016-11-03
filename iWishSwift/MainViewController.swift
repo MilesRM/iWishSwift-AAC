@@ -81,32 +81,32 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     // set cell size
     // must set UICollectionViewDelegateFlowLayout
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellSize: CGFloat = self.view.frame.size.width / 2 - 5
+        //let cellSize: CGFloat = self.view.frame.size.width / 2 - 5
         
-        return CGSize(width: cellSize, height: cellSize)
+        //return CGSize(width: cellSize, height: cellSize)
         
+        let nbCol = 3
         
-      /*
-        let totalwidth = collectionView.bounds.size.width;
-        let numberOfCellsPerRow = 2
-        let oddEven = indexPath.row / numberOfCellsPerRow % 2
-        let dimensions = CGFloat(Int(totalwidth) / numberOfCellsPerRow)
-        if (oddEven == 0) {
-            return CGSize(width: dimensions, height: dimensions)
-        } else {
-            return CGSize(width: dimensions, height: dimensions / 2)
-        }*/
+        let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+        let totalSpace = flowLayout.sectionInset.left
+            + flowLayout.sectionInset.right
+            + (flowLayout.minimumInteritemSpacing * CGFloat(nbCol - 1))
+        let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(nbCol))
+        return CGSize(width: size, height: size)
         
+    
     }
     
+    /*
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         print(indexPath.row)
         
-        performSegue(withIdentifier:"category", sender: self)
+        //performSegue(withIdentifier:"category", sender: self)
 
-    }
+    }*/
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
