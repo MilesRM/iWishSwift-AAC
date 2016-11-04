@@ -17,6 +17,7 @@
 		E048F2B31DBB834700C16B08 /* SubItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E048F2B21DBB834700C16B08 /* SubItem.swift */; };
 		E09224D51DBCEF15004718A1 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09224D41DBCEF15004718A1 /* TextCell.swift */; };
 		E0BA92571DBCD44D00DC4446 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BA92561DBCD44D00DC4446 /* CategoryViewController.swift */; };
+		E0DE42B11DCC1B2700106CCA /* RealmCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DE42B01DCC1B2700106CCA /* RealmCategory.swift */; };
 		E0F7C2961DBC5F2100D59AD0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F7C2951DBC5F2100D59AD0 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		E048F2B21DBB834700C16B08 /* SubItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubItem.swift; sourceTree = "<group>"; };
 		E09224D41DBCEF15004718A1 /* TextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
 		E0BA92561DBCD44D00DC4446 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		E0DE42B01DCC1B2700106CCA /* RealmCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCategory.swift; sourceTree = "<group>"; };
 		E0F7C2951DBC5F2100D59AD0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +90,7 @@
 		E045C4581DBB6D8D009BDFCE /* iWishSwift */ = {
 			isa = PBXGroup;
 			children = (
+				E0DE42AD1DCC1ABA00106CCA /* RealmController */,
 				E048F2AD1DBB812700C16B08 /* Model */,
 				E045C4591DBB6D8D009BDFCE /* AppDelegate.swift */,
 				E045C45D1DBB6D8D009BDFCE /* Main.storyboard */,
@@ -109,6 +112,14 @@
 				E048F2B21DBB834700C16B08 /* SubItem.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		E0DE42AD1DCC1ABA00106CCA /* RealmController */ = {
+			isa = PBXGroup;
+			children = (
+				E0DE42B01DCC1B2700106CCA /* RealmCategory.swift */,
+			);
+			name = RealmController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +251,7 @@
 				E0BA92571DBCD44D00DC4446 /* CategoryViewController.swift in Sources */,
 				E045C45A1DBB6D8D009BDFCE /* AppDelegate.swift in Sources */,
 				E0F7C2961DBC5F2100D59AD0 /* MainViewController.swift in Sources */,
+				E0DE42B11DCC1B2700106CCA /* RealmCategory.swift in Sources */,
 				E09224D51DBCEF15004718A1 /* TextCell.swift in Sources */,
 				E048F2AF1DBB813600C16B08 /* Category.swift in Sources */,
 			);
@@ -311,6 +323,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "善善的溝通板";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -355,6 +368,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "善善的溝通板";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 private let reuseIdentifier = "cell"
 
@@ -17,8 +18,10 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var switchButton: UISwitch!
 
-    var categoryLabels = ["1","2","3","4","5","6","7","8","9","10","11","12"]
+    //var categoryLabels = ["1","2","3","4","5","6","7","8","9","10","11","12"]
 
+    let realmCategory = RealmCategory()
+    var categoryItems:Results<Category>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +40,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         super.viewWillAppear(animated)
         
         self.navigationItem.title = fromMain
+
+        categoryItems = realmCategory.SelectAll_Category()
+        
         //print(fromMain)
     }
 
@@ -53,10 +59,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         
         //print(categoryLabels[indexPath.row])
         
-        //if let labelName = cell.label{
-        //    labelName.text = categoryLabels[indexPath.row]
-        //}
-        cell.label.text = categoryLabels[indexPath.row]
+        cell.label.text = categoryItems![indexPath.row].name
         
         return cell
     }
@@ -66,7 +69,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categoryLabels.count;
+        return categoryItems.count;
     }
     
     // set cell size

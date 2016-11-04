@@ -11,7 +11,7 @@ import RealmSwift
 
 class Item: Object {
     
-    dynamic var id = ""
+    dynamic var id = NSUUID().uuidString
     dynamic var name = ""
     let order = RealmOptional<Int>()
     let subItems = List<SubItem>()

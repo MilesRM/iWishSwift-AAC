@@ -17,7 +17,7 @@ class Category: Object {
 //    return []
 //  }
     
-    dynamic var id = ""
+    dynamic var id = NSUUID().uuidString
     dynamic var name = ""
     let order = RealmOptional<Int>()
     let items = List<Item>()

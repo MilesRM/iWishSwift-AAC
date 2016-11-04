@@ -11,7 +11,7 @@ import RealmSwift
 
 class SubItem: Object {
     
-    dynamic var id = ""
+    dynamic var id = NSUUID().uuidString
     dynamic var name = ""
 
     override static func primaryKey() -> String? {
