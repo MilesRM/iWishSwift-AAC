@@ -10,5 +10,15 @@ import UIKit
 
 class TextCell: UICollectionViewCell {
     
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var label: UILabel! {
+        didSet {
+            self.updateUI()
+        }
+    }
+    
+    func updateUI() {
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
+        label.numberOfLines = 0
+    }
+    
 }

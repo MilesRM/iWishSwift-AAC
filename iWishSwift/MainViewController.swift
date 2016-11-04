@@ -66,6 +66,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             + flowLayout.sectionInset.right
             + (flowLayout.minimumInteritemSpacing * CGFloat(nbCol - 1))
         let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(nbCol))
+        
         return CGSize(width: size, height: size)
         
     

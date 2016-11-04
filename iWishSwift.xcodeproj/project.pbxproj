@@ -15,6 +15,10 @@
 		E048F2AF1DBB813600C16B08 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E048F2AE1DBB813600C16B08 /* Category.swift */; };
 		E048F2B11DBB825E00C16B08 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E048F2B01DBB825E00C16B08 /* Item.swift */; };
 		E048F2B31DBB834700C16B08 /* SubItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E048F2B21DBB834700C16B08 /* SubItem.swift */; };
+		E06684CA1DCCD41200FB8D60 /* Daily.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06684C91DCCD41200FB8D60 /* Daily.swift */; };
+		E06684CC1DCCD4AD00FB8D60 /* RealmDaily.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06684CB1DCCD4AD00FB8D60 /* RealmDaily.swift */; };
+		E06684CF1DCCDBC600FB8D60 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06684CE1DCCDBC600FB8D60 /* ItemViewController.swift */; };
+		E06684D11DCCE18C00FB8D60 /* SubItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06684D01DCCE18C00FB8D60 /* SubItemViewController.swift */; };
 		E08269591DCC80FD008562B8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08269581DCC80FD008562B8 /* Constant.swift */; };
 		E082695D1DCCB0AB008562B8 /* Introduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = E082695C1DCCB0AB008562B8 /* Introduce.swift */; };
 		E082695F1DCCB131008562B8 /* RealmIntroduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = E082695E1DCCB131008562B8 /* RealmIntroduce.swift */; };
@@ -40,6 +44,10 @@
 		E048F2AE1DBB813600C16B08 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		E048F2B01DBB825E00C16B08 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		E048F2B21DBB834700C16B08 /* SubItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubItem.swift; sourceTree = "<group>"; };
+		E06684C91DCCD41200FB8D60 /* Daily.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Daily.swift; sourceTree = "<group>"; };
+		E06684CB1DCCD4AD00FB8D60 /* RealmDaily.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDaily.swift; sourceTree = "<group>"; };
+		E06684CE1DCCDBC600FB8D60 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		E06684D01DCCE18C00FB8D60 /* SubItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubItemViewController.swift; sourceTree = "<group>"; };
 		E08269581DCC80FD008562B8 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		E082695C1DCCB0AB008562B8 /* Introduce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Introduce.swift; sourceTree = "<group>"; };
 		E082695E1DCCB131008562B8 /* RealmIntroduce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmIntroduce.swift; sourceTree = "<group>"; };
@@ -102,6 +110,7 @@
 		E045C4581DBB6D8D009BDFCE /* iWishSwift */ = {
 			isa = PBXGroup;
 			children = (
+				E06684CD1DCCD93E00FB8D60 /* Views */,
 				E0AD5B041DCC7E2E00D99E47 /* Helpers */,
 				E0DE42AD1DCC1ABA00106CCA /* Controllers */,
 				E048F2AD1DBB812700C16B08 /* Models */,
@@ -110,9 +119,6 @@
 				E045C4601DBB6D8D009BDFCE /* Assets.xcassets */,
 				E045C4621DBB6D8D009BDFCE /* LaunchScreen.storyboard */,
 				E045C4651DBB6D8D009BDFCE /* Info.plist */,
-				E0F7C2951DBC5F2100D59AD0 /* MainViewController.swift */,
-				E0BA92561DBCD44D00DC4446 /* CategoryViewController.swift */,
-				E09224D41DBCEF15004718A1 /* TextCell.swift */,
 			);
 			path = iWishSwift;
 			sourceTree = "<group>";
@@ -125,8 +131,21 @@
 				E048F2B21DBB834700C16B08 /* SubItem.swift */,
 				E082695C1DCCB0AB008562B8 /* Introduce.swift */,
 				E08269601DCCB1A6008562B8 /* Selection.swift */,
+				E06684C91DCCD41200FB8D60 /* Daily.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		E06684CD1DCCD93E00FB8D60 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E0F7C2951DBC5F2100D59AD0 /* MainViewController.swift */,
+				E0BA92561DBCD44D00DC4446 /* CategoryViewController.swift */,
+				E09224D41DBCEF15004718A1 /* TextCell.swift */,
+				E06684CE1DCCDBC600FB8D60 /* ItemViewController.swift */,
+				E06684D01DCCE18C00FB8D60 /* SubItemViewController.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		E0AD5B041DCC7E2E00D99E47 /* Helpers */ = {
@@ -144,6 +163,7 @@
 				E0DE42B01DCC1B2700106CCA /* RealmCategory.swift */,
 				E082695E1DCCB131008562B8 /* RealmIntroduce.swift */,
 				E08269621DCCB21E008562B8 /* RealmSelection.swift */,
+				E06684CB1DCCD4AD00FB8D60 /* RealmDaily.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -272,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E06684D11DCCE18C00FB8D60 /* SubItemViewController.swift in Sources */,
 				E08269631DCCB21E008562B8 /* RealmSelection.swift in Sources */,
 				E08269611DCCB1A6008562B8 /* Selection.swift in Sources */,
 				E082695D1DCCB0AB008562B8 /* Introduce.swift in Sources */,
@@ -283,9 +304,12 @@
 				E0F7C2961DBC5F2100D59AD0 /* MainViewController.swift in Sources */,
 				E0DE42B11DCC1B2700106CCA /* RealmCategory.swift in Sources */,
 				E09224D51DBCEF15004718A1 /* TextCell.swift in Sources */,
+				E06684CA1DCCD41200FB8D60 /* Daily.swift in Sources */,
 				E08269591DCC80FD008562B8 /* Constant.swift in Sources */,
 				E0AD5B061DCC7E9900D99E47 /* TextToSpeech.swift in Sources */,
+				E06684CF1DCCDBC600FB8D60 /* ItemViewController.swift in Sources */,
 				E048F2AF1DBB813600C16B08 /* Category.swift in Sources */,
+				E06684CC1DCCD4AD00FB8D60 /* RealmDaily.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

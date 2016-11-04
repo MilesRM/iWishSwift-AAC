@@ -1,5 +1,5 @@
 //
-//  RealmIntroduce.swift
+//  RealmDaily.swift
 //  iWishSwift
 //
 //  Created by andycheng on 2016/11/4.
@@ -7,27 +7,31 @@
 //
 import RealmSwift
 
-public class RealmIntroduce: NSObject {
+public class RealmDaily: NSObject {
     
     override init() {
         super.init()
         
         let count = self.selectAll().count
         if count == 0 {
-            self.add("我很好,謝謝你!")
-            self.add("我的名字是鄭至善(善善)")
-            self.add("我今年十歲讀五年級")
-            self.add("我住在台北市士林區")
-            self.add("再見")
-            self.add("我喜歡逛街和看水舞")
-            self.add("我喜歡吃好吃的東西")
-            self.add("我去過很多國家,如英國,紐西蘭")
+            self.add("是")
+            self.add("不是")
+            self.add("對")
+            self.add("不對")
+            self.add("好")
+            self.add("不好")
+            self.add("不知道?")
+            self.add("不確定?")
+            self.add("有")
+            self.add("沒有")
+            self.add("喜歡")
+            self.add("不喜歡")
         }
     }
     
     func add(_ itemName:String){
         
-        let item = Introduce()
+        let item = Daily()
         item.name = itemName
         
         let realm = try! Realm()
@@ -41,7 +45,7 @@ public class RealmIntroduce: NSObject {
         
         let realm = try! Realm()
         let predicate = NSPredicate(format: "id = %@", id)
-        let item = realm.objects(Introduce.self).filter(predicate)
+        let item = realm.objects(Daily.self).filter(predicate)
         
         try! realm.write {
             realm.delete(item)
@@ -54,15 +58,15 @@ public class RealmIntroduce: NSObject {
         let realm = try! Realm()
         
         try! realm.write {
-            realm.create(Introduce.self, value: ["id": id, "name": name], update: true)
+            realm.create(Daily.self, value: ["id": id, "name": name], update: true)
         }
         
     }
     
-    func selectAll() -> Results<Introduce> {
+    func selectAll() -> Results<Daily> {
         
         let realm = try! Realm()
         
-        return realm.objects(Introduce.self).sorted(byProperty:"order")
+        return realm.objects(Daily.self).sorted(byProperty:"datetime", ascending: true)
     }
 }

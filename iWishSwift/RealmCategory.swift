@@ -15,13 +15,18 @@ public class RealmCategory: NSObject {
         
         let count = self.selectAll().count
         if count == 0 {
-            self.add("1")
-            self.add("2")
-            self.add("3")
-            self.add("4")
-            self.add("5")
-            self.add("6")
-            self.add("7")
+            self.add("你")
+            self.add("我")
+            self.add("他")
+            self.add("請幫忙")
+            self.add("爸爸媽媽")
+            self.add("老師")
+            self.add("外婆")
+            self.add("舅舅")
+            self.add("爺爺奶奶")
+            self.add("謝謝你")
+            self.add("你好")
+            self.add("早安(午安,晚安)")
         }
     }
     
@@ -41,10 +46,10 @@ public class RealmCategory: NSObject {
         
         let realm = try! Realm()
         let predicate = NSPredicate(format: "id = %@", id)
-        let category = realm.objects(Category.self).filter(predicate)
+        let item = realm.objects(Category.self).filter(predicate)
         
         try! realm.write {
-            realm.delete(category)
+            realm.delete(item)
         }
         
     }

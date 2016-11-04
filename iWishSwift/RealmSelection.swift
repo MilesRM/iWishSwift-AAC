@@ -14,13 +14,18 @@ public class RealmSelection: NSObject {
         
         let count = self.selectAll().count
         if count == 0 {
-            self.add("1")
-            self.add("2")
-            self.add("3")
-            self.add("4")
-            self.add("5")
-            self.add("6")
-            self.add("7")
+            self.add("是")
+            self.add("不是")
+            self.add("對")
+            self.add("不對")
+            self.add("好")
+            self.add("不好")
+            self.add("不知道?")
+            self.add("不確定?")
+            self.add("有")
+            self.add("沒有")
+            self.add("喜歡")
+            self.add("不喜歡")
         }
     }
     
@@ -40,10 +45,10 @@ public class RealmSelection: NSObject {
         
         let realm = try! Realm()
         let predicate = NSPredicate(format: "id = %@", id)
-        let category = realm.objects(Selection.self).filter(predicate)
+        let item = realm.objects(Selection.self).filter(predicate)
         
         try! realm.write {
-            realm.delete(category)
+            realm.delete(item)
         }
         
     }

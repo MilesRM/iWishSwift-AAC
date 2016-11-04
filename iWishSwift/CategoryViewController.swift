@@ -27,6 +27,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     let realmSelection = RealmSelection()
     var selectionItems:Results<Selection>!
     
+    let realmDaily = RealmDaily()
+    var dailyItems:Results<Daily>!
+    
     var editMode:Bool = false
     var tts:TextToSpeech!
 
@@ -34,11 +37,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         super.viewDidLoad()
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        
         tts = TextToSpeech()
-
-        print("viewDidLoad")
-
     }
 
     var label = ""
@@ -62,11 +61,12 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
             case "Selection":
                 selectionItems = realmSelection.selectAll()
                 break
+            case "Daily":
+                dailyItems = realmDaily.selectAll()
+                break
             default:
                 break
         }
-        
-        print("viewWillAppear")
     }
 
     @IBAction func switchChanged(_ sender: UISwitch) {
@@ -109,6 +109,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
                 break
             case "Selection":
                 self.realmSelection.add(textField.text!)
+                break
+            case "Daily":
+                self.realmDaily.add(textField.text!)
                 break
             default:
                 break
@@ -157,6 +160,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
             case "Selection":
                 self.realmSelection.update(id, textField.text!)
                 break
+            case "Daily":
+                self.realmDaily.update(id, textField.text!)
+                break
             default:
                 break
             }
@@ -177,6 +183,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
                 break
             case "Selection":
                 self.realmSelection.delete(id)
+                break
+            case "Daily":
+                self.realmDaily.delete(id)
                 break
             default:
                 break
@@ -211,6 +220,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         case "Selection":
             lableName = selectionItems![indexPath.row].name
             break
+        case "Daily":
+            lableName = dailyItems![indexPath.row].name
+            break
         default:
             lableName = ""
             break
@@ -238,6 +250,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         case "Selection":
             cnt = selectionItems.count
             break
+        case "Daily":
+            cnt = dailyItems.count
+            break
         default:
             cnt = 0
             break
@@ -249,19 +264,21 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     // set cell size
     // must set UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let nbCol = 4
+        var nbCol = 4
+        
+        if mainKey == "Daily" {
+            nbCol = 1
+        }
         
         let totalSpace = flowLayout.sectionInset.left
             + flowLayout.sectionInset.right
             + (flowLayout.minimumInteritemSpacing * CGFloat(nbCol - 1))
         let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(nbCol))
-        return CGSize(width: size, height: size)
+        return CGSize(width: size, height: 200)
     
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        print(indexPath.row)
         
         var idName:String!
         var labelName:String!
@@ -277,6 +294,10 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         case "Selection":
             idName = selectionItems![indexPath.row].id
             labelName = selectionItems![indexPath.row].name
+            break
+        case "Daily":
+            idName = dailyItems![indexPath.row].id
+            labelName = dailyItems![indexPath.row].name
             break
         default:
             idName = ""
@@ -294,6 +315,39 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         //  performSegue(withIdentifier:"category", sender: self)
         
     }
+    
+    
+    // MARK:- Selected Cell IndexPath
+    
+    func getIndexPathForSelectedCell() -> IndexPath? {
+        
+        var indexPath:IndexPath?
+        
+        if collectionView.indexPathsForSelectedItems!.count > 0 {
+            indexPath = collectionView.indexPathsForSelectedItems![0]
+        }
+        return indexPath
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if self.mainKey == "AAC" {
+            let indexPath = getIndexPathForSelectedCell()
+        
+            if segue.identifier == "item" {
+                print("item")
+                if let destViewController = segue.destination as? ItemViewController {
+                    print("categoryView = " + categoryItems![(indexPath?.row)!].name)
+                    destViewController.label = categoryItems![(indexPath?.row)!].name
+                    destViewController.key = categoryItems![(indexPath?.row)!].id
+            }
+        }
+        
+      }
+        
+    }
+
 
   
 
