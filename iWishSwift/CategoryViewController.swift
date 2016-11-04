@@ -18,35 +18,176 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var switchButton: UISwitch!
 
-    //var categoryLabels = ["1","2","3","4","5","6","7","8","9","10","11","12"]
-
     let realmCategory = RealmCategory()
     var categoryItems:Results<Category>!
     
+    let realmIntroduce = RealmIntroduce()
+    var introduceItems:Results<Introduce>!
+    
+    let realmSelection = RealmSelection()
+    var selectionItems:Results<Selection>!
+    
+    var editMode:Bool = false
+    var tts:TextToSpeech!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
-        //addButton.isEnabled = false
+        tts = TextToSpeech()
+
+        print("viewDidLoad")
+
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    var fromMain = "";
+    var label = ""
+    var key = ""
+    var mainKey = ""
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationItem.title = fromMain
-
-        categoryItems = realmCategory.SelectAll_Category()
+        //collectionView?.reloadData()
         
-        //print(fromMain)
+        self.navigationItem.title = label
+        mainKey = key
+        
+        switch(mainKey) {
+            case "AAC":
+                categoryItems = realmCategory.selectAll()
+                break
+            case "Introduce":
+                introduceItems = realmIntroduce.selectAll()
+                break
+            case "Selection":
+                selectionItems = realmSelection.selectAll()
+                break
+            default:
+                break
+        }
+        
+        print("viewWillAppear")
     }
 
+    @IBAction func switchChanged(_ sender: UISwitch) {
+        
+        if sender.isOn {
+            editMode = true
+        } else {
+            editMode = false
+        }
+        print(editMode)
+    }
     
+    @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
+        let addAlertController = UIAlertController(title: "新增",
+                                    message: "",
+                                    preferredStyle: .alert
+                                    )
+        
+        addAlertController.addTextField {
+            (textField: UITextField!) -> Void in
+            textField.placeholder = "內容"
+        }
+        
+        let cancelAction = UIAlertAction(
+            title: "取消",
+            style: .cancel,
+            handler: nil)
+        addAlertController.addAction(cancelAction)
+        
+        let saveAction = UIAlertAction(title: "儲存", style: .default) {
+                (action: UIAlertAction!) -> Void in
+            let textField = (addAlertController.textFields?.first!)! as UITextField
+            
+            switch(self.mainKey) {
+            case "AAC":
+                self.realmCategory.add(textField.text!)
+                break
+            case "Introduce":
+                self.realmIntroduce.add(textField.text!)
+                break
+            case "Selection":
+                self.realmSelection.add(textField.text!)
+                break
+            default:
+                break
+            }
+            
+            self.collectionView?.reloadData()
+        }
+        addAlertController.addAction(saveAction)
+        
+        if editMode {
+            self.present(addAlertController, animated: true, completion: nil)
+        }
+    }
+    
+  
+    func editData(_ id:String, _ name:String){
+        let editAlertController = UIAlertController(title: "修改",
+                                                   message: "",
+                                                   preferredStyle: .alert
+        )
+        
+        
+        editAlertController.addTextField {
+            (textField: UITextField!) -> Void in
+            textField.placeholder = "內容"
+            textField.text = name
+        }
+ 
+        
+        let cancelAction = UIAlertAction(
+            title: "取消",
+            style: .cancel,
+            handler: nil)
+        editAlertController.addAction(cancelAction)
+        
+        let editAction = UIAlertAction(title: "修改", style: .default) {
+            (action: UIAlertAction!) -> Void in
+            let textField = (editAlertController.textFields?.first!)! as UITextField
+            switch(self.mainKey) {
+            case "AAC":
+                self.realmCategory.update(id, textField.text!)
+                break
+            case "Introduce":
+                self.realmIntroduce.update(id, textField.text!)
+                break
+            case "Selection":
+                self.realmSelection.update(id, textField.text!)
+                break
+            default:
+                break
+            }
+
+            self.collectionView?.reloadData()
+        }
+        editAlertController.addAction(editAction)
+        
+        
+        let deleteAction = UIAlertAction(title: "刪除", style: .destructive) {
+            (action: UIAlertAction!) -> Void in
+            switch(self.mainKey) {
+            case "AAC":
+                self.realmCategory.delete(id)
+                break
+            case "Introduce":
+                self.realmIntroduce.delete(id)
+                break
+            case "Selection":
+                self.realmSelection.delete(id)
+                break
+            default:
+                break
+            }
+            self.collectionView?.reloadData()
+        }
+        editAlertController.addAction(deleteAction)
+        
+        self.present(editAlertController, animated: true, completion: nil)
+
+    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -59,7 +200,23 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         
         //print(categoryLabels[indexPath.row])
         
-        cell.label.text = categoryItems![indexPath.row].name
+        var lableName:String!
+        switch(self.mainKey) {
+        case "AAC":
+            lableName = categoryItems![indexPath.row].name
+            break
+        case "Introduce":
+            lableName = introduceItems![indexPath.row].name
+            break
+        case "Selection":
+            lableName = selectionItems![indexPath.row].name
+            break
+        default:
+            lableName = ""
+            break
+        }
+        
+        cell.label.text = lableName
         
         return cell
     }
@@ -69,7 +226,24 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categoryItems.count;
+        
+        var cnt = 0
+        switch(self.mainKey) {
+        case "AAC":
+            cnt = categoryItems.count
+            break
+        case "Introduce":
+            cnt = introduceItems.count
+            break
+        case "Selection":
+            cnt = selectionItems.count
+            break
+        default:
+            cnt = 0
+            break
+        }
+
+        return cnt;
     }
     
     // set cell size
@@ -82,15 +256,42 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
             + (flowLayout.minimumInteritemSpacing * CGFloat(nbCol - 1))
         let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(nbCol))
         return CGSize(width: size, height: size)
-        
-        
+    
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         print(indexPath.row)
         
-      //  performSegue(withIdentifier:"category", sender: self)
+        var idName:String!
+        var labelName:String!
+        switch(self.mainKey) {
+        case "AAC":
+            idName = categoryItems![indexPath.row].id
+            labelName = categoryItems![indexPath.row].name
+            break
+        case "Introduce":
+            idName = introduceItems![indexPath.row].id
+            labelName = introduceItems![indexPath.row].name
+            break
+        case "Selection":
+            idName = selectionItems![indexPath.row].id
+            labelName = selectionItems![indexPath.row].name
+            break
+        default:
+            idName = ""
+            labelName = ""
+            break
+        }
+
+        
+        if editMode {
+            editData(idName, labelName)
+        } else {
+            tts.speak(labelName)
+        }
+        
+        //  performSegue(withIdentifier:"category", sender: self)
         
     }
 

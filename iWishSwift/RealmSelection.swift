@@ -1,14 +1,13 @@
 //
-//  RealmCategory.swift
+//  RealmSelection.swift
 //  iWishSwift
 //
 //  Created by andycheng on 2016/11/4.
 //  Copyright © 2016年 ccjeng. All rights reserved.
 //
-
 import RealmSwift
 
-public class RealmCategory: NSObject {
+public class RealmSelection: NSObject {
     
     override init() {
         super.init()
@@ -27,11 +26,11 @@ public class RealmCategory: NSObject {
     
     func add(_ itemName:String){
         
-        let item = Category()
+        let item = Selection()
         item.name = itemName
-    
+        
         let realm = try! Realm()
-
+        
         try! realm.write {
             realm.add(item)
         }
@@ -41,7 +40,7 @@ public class RealmCategory: NSObject {
         
         let realm = try! Realm()
         let predicate = NSPredicate(format: "id = %@", id)
-        let category = realm.objects(Category.self).filter(predicate)
+        let category = realm.objects(Selection.self).filter(predicate)
         
         try! realm.write {
             realm.delete(category)
@@ -54,15 +53,15 @@ public class RealmCategory: NSObject {
         let realm = try! Realm()
         
         try! realm.write {
-            realm.create(Category.self, value: ["id": id, "name": name], update: true)
+            realm.create(Selection.self, value: ["id": id, "name": name], update: true)
         }
         
     }
     
-    func selectAll() -> Results<Category> {
+    func selectAll() -> Results<Selection> {
         
         let realm = try! Realm()
-
-        return realm.objects(Category.self).sorted(byProperty:"order")
+        
+        return realm.objects(Selection.self).sorted(byProperty:"order")
     }
 }

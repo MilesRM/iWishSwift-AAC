@@ -15,7 +15,13 @@
 		E048F2AF1DBB813600C16B08 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E048F2AE1DBB813600C16B08 /* Category.swift */; };
 		E048F2B11DBB825E00C16B08 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E048F2B01DBB825E00C16B08 /* Item.swift */; };
 		E048F2B31DBB834700C16B08 /* SubItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E048F2B21DBB834700C16B08 /* SubItem.swift */; };
+		E08269591DCC80FD008562B8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08269581DCC80FD008562B8 /* Constant.swift */; };
+		E082695D1DCCB0AB008562B8 /* Introduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = E082695C1DCCB0AB008562B8 /* Introduce.swift */; };
+		E082695F1DCCB131008562B8 /* RealmIntroduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = E082695E1DCCB131008562B8 /* RealmIntroduce.swift */; };
+		E08269611DCCB1A6008562B8 /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08269601DCCB1A6008562B8 /* Selection.swift */; };
+		E08269631DCCB21E008562B8 /* RealmSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08269621DCCB21E008562B8 /* RealmSelection.swift */; };
 		E09224D51DBCEF15004718A1 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09224D41DBCEF15004718A1 /* TextCell.swift */; };
+		E0AD5B061DCC7E9900D99E47 /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AD5B051DCC7E9900D99E47 /* TextToSpeech.swift */; };
 		E0BA92571DBCD44D00DC4446 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BA92561DBCD44D00DC4446 /* CategoryViewController.swift */; };
 		E0DE42B11DCC1B2700106CCA /* RealmCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DE42B01DCC1B2700106CCA /* RealmCategory.swift */; };
 		E0F7C2961DBC5F2100D59AD0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F7C2951DBC5F2100D59AD0 /* MainViewController.swift */; };
@@ -34,7 +40,13 @@
 		E048F2AE1DBB813600C16B08 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		E048F2B01DBB825E00C16B08 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		E048F2B21DBB834700C16B08 /* SubItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubItem.swift; sourceTree = "<group>"; };
+		E08269581DCC80FD008562B8 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		E082695C1DCCB0AB008562B8 /* Introduce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Introduce.swift; sourceTree = "<group>"; };
+		E082695E1DCCB131008562B8 /* RealmIntroduce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmIntroduce.swift; sourceTree = "<group>"; };
+		E08269601DCCB1A6008562B8 /* Selection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
+		E08269621DCCB21E008562B8 /* RealmSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSelection.swift; sourceTree = "<group>"; };
 		E09224D41DBCEF15004718A1 /* TextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
+		E0AD5B051DCC7E9900D99E47 /* TextToSpeech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
 		E0BA92561DBCD44D00DC4446 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		E0DE42B01DCC1B2700106CCA /* RealmCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCategory.swift; sourceTree = "<group>"; };
 		E0F7C2951DBC5F2100D59AD0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -90,8 +102,9 @@
 		E045C4581DBB6D8D009BDFCE /* iWishSwift */ = {
 			isa = PBXGroup;
 			children = (
-				E0DE42AD1DCC1ABA00106CCA /* RealmController */,
-				E048F2AD1DBB812700C16B08 /* Model */,
+				E0AD5B041DCC7E2E00D99E47 /* Helpers */,
+				E0DE42AD1DCC1ABA00106CCA /* Controllers */,
+				E048F2AD1DBB812700C16B08 /* Models */,
 				E045C4591DBB6D8D009BDFCE /* AppDelegate.swift */,
 				E045C45D1DBB6D8D009BDFCE /* Main.storyboard */,
 				E045C4601DBB6D8D009BDFCE /* Assets.xcassets */,
@@ -104,22 +117,35 @@
 			path = iWishSwift;
 			sourceTree = "<group>";
 		};
-		E048F2AD1DBB812700C16B08 /* Model */ = {
+		E048F2AD1DBB812700C16B08 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				E048F2AE1DBB813600C16B08 /* Category.swift */,
 				E048F2B01DBB825E00C16B08 /* Item.swift */,
 				E048F2B21DBB834700C16B08 /* SubItem.swift */,
+				E082695C1DCCB0AB008562B8 /* Introduce.swift */,
+				E08269601DCCB1A6008562B8 /* Selection.swift */,
 			);
-			name = Model;
+			name = Models;
 			sourceTree = "<group>";
 		};
-		E0DE42AD1DCC1ABA00106CCA /* RealmController */ = {
+		E0AD5B041DCC7E2E00D99E47 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E0AD5B051DCC7E9900D99E47 /* TextToSpeech.swift */,
+				E08269581DCC80FD008562B8 /* Constant.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		E0DE42AD1DCC1ABA00106CCA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				E0DE42B01DCC1B2700106CCA /* RealmCategory.swift */,
+				E082695E1DCCB131008562B8 /* RealmIntroduce.swift */,
+				E08269621DCCB21E008562B8 /* RealmSelection.swift */,
 			);
-			name = RealmController;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +272,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E08269631DCCB21E008562B8 /* RealmSelection.swift in Sources */,
+				E08269611DCCB1A6008562B8 /* Selection.swift in Sources */,
+				E082695D1DCCB0AB008562B8 /* Introduce.swift in Sources */,
+				E082695F1DCCB131008562B8 /* RealmIntroduce.swift in Sources */,
 				E048F2B11DBB825E00C16B08 /* Item.swift in Sources */,
 				E048F2B31DBB834700C16B08 /* SubItem.swift in Sources */,
 				E0BA92571DBCD44D00DC4446 /* CategoryViewController.swift in Sources */,
@@ -253,6 +283,8 @@
 				E0F7C2961DBC5F2100D59AD0 /* MainViewController.swift in Sources */,
 				E0DE42B11DCC1B2700106CCA /* RealmCategory.swift in Sources */,
 				E09224D51DBCEF15004718A1 /* TextCell.swift in Sources */,
+				E08269591DCC80FD008562B8 /* Constant.swift in Sources */,
+				E0AD5B061DCC7E9900D99E47 /* TextToSpeech.swift in Sources */,
 				E048F2AF1DBB813600C16B08 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

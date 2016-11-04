@@ -1,22 +1,21 @@
 //
-//  Category.swift
+//  Introduction.swift
 //  iWishSwift
 //
-//  Created by andycheng on 2016/10/22.
+//  Created by andycheng on 2016/11/4.
 //  Copyright © 2016年 ccjeng. All rights reserved.
 //
-
 import Foundation
 import RealmSwift
 
-class Category: Object {
+class Introduce: Object {
     
     dynamic var id = NSUUID().uuidString
     dynamic var name = ""
     let order = RealmOptional<Int>()
-    let items = List<Item>()
-    
+
     override static func primaryKey() -> String? {
         return "id"
     }
+
 }

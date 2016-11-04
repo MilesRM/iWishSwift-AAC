@@ -12,14 +12,14 @@ private let reuseIdentifier = "CollectionViewCell"
 
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
-    var mainLabels = ["溝通","活動(日記)","常用句","自我介紹(回答)","是不是(選擇)","文章"]
-
+    let mainLabels = Constants.mainLabels
+    let mainKeys = Constants.mainKeys
+    
+    var tts:TextToSpeech!
+    
     @IBOutlet var MainCollectionView: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
-    
-    //fileprivate let leftAndRightPadding: CGFloat = 32.0
-    //fileprivate let numberOfItemsPerRow: CGFloat = 3.0
-    //fileprivate let heightAdjustment: CGFloat = 30.0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,30 +28,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.MainCollectionView.delegate = self
         self.MainCollectionView.dataSource = self
         
-        /*
-        flowLayout.scrollDirection = .horizontal
-        flowLayout.minimumLineSpacing = 0
-        flowLayout.minimumInteritemSpacing = 0
-        flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
- */
-        
-        /*
-        let width = (MainCollectionView!.frame.width - leftAndRightPadding) / numberOfItemsPerRow
-        let layout = flowLayout as UICollectionViewFlowLayout
-        layout.itemSize = CGSize(width: width, height: width + heightAdjustment)
-        */
-        //let nib = UINib(nibName: "CollectionViewCell", bundle: nil)
-        //self.MainCollectionView!.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
-        
-        
+        tts = TextToSpeech()
+ 
     }
-    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -94,7 +74,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
-        //print(mainLabels[indexPath.row])
+        tts.speak(mainLabels[indexPath.row])
+        
     }
     
     // MARK:- Selected Cell IndexPath
@@ -114,12 +95,15 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         let indexPath = getIndexPathForSelectedCell()
         
-        if segue.identifier == "category"
+        if segue.identifier == "category" //aac
         {
             if let destViewController = segue.destination as? CategoryViewController {
-                destViewController.fromMain = mainLabels[(indexPath?.row)!]
+                destViewController.label = mainLabels[(indexPath?.row)!]
+                destViewController.key = mainKeys[(indexPath?.row)!]
             }
         }
+        
+        
     }
 
 
