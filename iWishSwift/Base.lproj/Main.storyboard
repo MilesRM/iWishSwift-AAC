@@ -191,7 +191,7 @@
                                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="label" destination="aUK-dn-qZy" id="XKl-9v-b2Q"/>
-                                            <segue destination="duL-1A-nC3" kind="show" id="RRO-XA-qcP"/>
+                                            <segue destination="duL-1A-nC3" kind="show" identifier="subitem" id="RRO-XA-qcP"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

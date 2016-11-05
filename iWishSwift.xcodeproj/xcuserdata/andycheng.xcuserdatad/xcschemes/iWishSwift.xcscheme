@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E045C4551DBB6D8D009BDFCE"
-               BuildableName = "iWishSwift.app"
+               BuildableName = "&#x5584;&#x5584;&#x7684;&#x6e9d;&#x901a;&#x677f;.app"
                BlueprintName = "iWishSwift"
                ReferencedContainer = "container:iWishSwift.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E045C4551DBB6D8D009BDFCE"
-            BuildableName = "iWishSwift.app"
+            BuildableName = "&#x5584;&#x5584;&#x7684;&#x6e9d;&#x901a;&#x677f;.app"
             BlueprintName = "iWishSwift"
             ReferencedContainer = "container:iWishSwift.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E045C4551DBB6D8D009BDFCE"
-            BuildableName = "iWishSwift.app"
+            BuildableName = "&#x5584;&#x5584;&#x7684;&#x6e9d;&#x901a;&#x677f;.app"
             BlueprintName = "iWishSwift"
             ReferencedContainer = "container:iWishSwift.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E045C4551DBB6D8D009BDFCE"
-            BuildableName = "iWishSwift.app"
+            BuildableName = "&#x5584;&#x5584;&#x7684;&#x6e9d;&#x901a;&#x677f;.app"
             BlueprintName = "iWishSwift"
             ReferencedContainer = "container:iWishSwift.xcodeproj">
          </BuildableReference>

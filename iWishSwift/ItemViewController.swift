@@ -103,4 +103,42 @@ class ItemViewController: UIViewController, UICollectionViewDataSource, UICollec
         //  performSegue(withIdentifier:"category", sender: self)
         
     }
+    
+    // MARK:- Selected Cell IndexPath
+    
+    func getIndexPathForSelectedCell() -> IndexPath? {
+        
+        var indexPath:IndexPath?
+        
+        if collectionView.indexPathsForSelectedItems!.count > 0 {
+            indexPath = collectionView.indexPathsForSelectedItems![0]
+        }
+        return indexPath
+    }
+    
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        if identifier == "subitem" {
+            if editMode == false{
+                return true
+            }
+        }
+        return false
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+            let indexPath = getIndexPathForSelectedCell()
+            
+            if segue.identifier == "subitem" {
+                if let destViewController = segue.destination as? SubItemViewController {
+                    destViewController.label = label + items![(indexPath?.row)!].name
+                    destViewController.key = items![(indexPath?.row)!].id
+                }
+            }
+            
+        
+    }
+
 }

@@ -311,8 +311,10 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         } else {
             tts.speak(labelName)
         }
-        
-        //  performSegue(withIdentifier:"category", sender: self)
+        /*
+        if mainKey == "AAC" {
+          performSegue(withIdentifier:"category", sender: self)
+        }*/
         
     }
     
@@ -330,15 +332,23 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        if identifier == "item" {
+            if mainKey == "AAC" && editMode == false{
+                return true
+            }
+        }
+        return false
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if self.mainKey == "AAC" {
+        if mainKey == "AAC" {
             let indexPath = getIndexPathForSelectedCell()
         
             if segue.identifier == "item" {
-                print("item")
                 if let destViewController = segue.destination as? ItemViewController {
-                    //print("categoryView = " + categoryItems![(indexPath?.row)!].name)
                     destViewController.label = categoryItems![(indexPath?.row)!].name
                     destViewController.key = categoryItems![(indexPath?.row)!].id
             }
