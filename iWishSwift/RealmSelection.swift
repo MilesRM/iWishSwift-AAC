@@ -37,7 +37,9 @@ public class RealmSelection: NSObject {
         let realm = try! Realm()
         
         try! realm.write {
-            realm.add(item)
+            if itemName != "" {
+                realm.add(item)
+            }
         }
     }
     

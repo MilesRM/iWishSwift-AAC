@@ -37,7 +37,9 @@ public class RealmItem: NSObject {
         let realm = try! Realm()
         
         try! realm.write {
-            realm.add(item)
+            if itemName != "" {
+                realm.add(item)
+            }
         }
     }
     
@@ -46,7 +48,7 @@ public class RealmItem: NSObject {
         let realm = try! Realm()
         let predicate = NSPredicate(format: "id = %@", id)
         let item = realm.objects(Item.self).filter(predicate)
-        
+                
         try! realm.write {
             realm.delete(item)
         }

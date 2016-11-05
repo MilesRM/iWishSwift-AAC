@@ -38,7 +38,9 @@ public class RealmCategory: NSObject {
         let realm = try! Realm()
 
         try! realm.write {
-            realm.add(item)
+            if itemName != "" {
+                realm.add(item)
+            }
         }
     }
     

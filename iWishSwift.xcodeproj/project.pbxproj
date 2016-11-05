@@ -118,10 +118,10 @@
 		E045C4581DBB6D8D009BDFCE /* iWishSwift */ = {
 			isa = PBXGroup;
 			children = (
+				E048F2AD1DBB812700C16B08 /* Models */,
 				E06684CD1DCCD93E00FB8D60 /* Views */,
 				E0AD5B041DCC7E2E00D99E47 /* Helpers */,
 				E0DE42AD1DCC1ABA00106CCA /* Controllers */,
-				E048F2AD1DBB812700C16B08 /* Models */,
 				E045C4591DBB6D8D009BDFCE /* AppDelegate.swift */,
 				E045C45D1DBB6D8D009BDFCE /* Main.storyboard */,
 				E045C4601DBB6D8D009BDFCE /* Assets.xcassets */,

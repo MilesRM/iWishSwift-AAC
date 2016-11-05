@@ -15,6 +15,7 @@ class ItemViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    @IBOutlet weak var addButton: UIButton!
 
     let realmItem = RealmItem()
     var items:Results<Item>!
@@ -27,6 +28,7 @@ class ItemViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         tts = TextToSpeech()
+        addButton.isHidden = true
     }
 
     var label = ""
@@ -42,16 +44,15 @@ class ItemViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBAction func swithChanged(_ sender: UISwitch) {
         if sender.isOn {
             editMode = true
+            addButton.isHidden = false
         } else {
             editMode = false
+            addButton.isHidden = true
         }
     }
     
-    @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
-        let addAlertController = UIAlertController(title: "新增",
-                                                   message: "",
-                                                   preferredStyle: .alert
-        )
+    @IBAction func addButtonTouchDown(_ sender: UIButton) {
+        let addAlertController = UIAlertController(title: "新增", message: "", preferredStyle: .alert)
         
         addAlertController.addTextField {
             (textField: UITextField!) -> Void in
@@ -146,7 +147,7 @@ class ItemViewController: UIViewController, UICollectionViewDataSource, UICollec
             + flowLayout.sectionInset.right
             + (flowLayout.minimumInteritemSpacing * CGFloat(nbCol - 1))
         let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(nbCol))
-        return CGSize(width: size, height: 200)
+        return CGSize(width: size, height: 220)
         
     }
     

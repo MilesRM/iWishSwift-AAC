@@ -12,6 +12,7 @@ class SubItem: Object {
     
     dynamic var id = NSUUID().uuidString
     dynamic var name = ""
+    dynamic var order = 0
 
     override static func primaryKey() -> String? {
         return "id"

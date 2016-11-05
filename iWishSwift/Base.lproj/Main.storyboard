@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cv8-Of-T9z">
-                                <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="jVb-El-rvS">
@@ -83,7 +83,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Qm-Gs-Ull">
-                                <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="COF-Z1-lQ5">
@@ -100,7 +100,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" alpha="0.94999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4A-xk-qg2">
+                                                <label opaque="NO" alpha="0.94999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4A-xk-qg2">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="32"/>
@@ -122,24 +122,29 @@
                     </view>
                     <navigationItem key="navigationItem" title="善善的溝通板" id="vsl-VP-SU2">
                         <rightBarButtonItems>
-                            <barButtonItem title="新增" id="Col-fe-aTG">
-                                <connections>
-                                    <action selector="addButtonTapped:" destination="cvd-FR-XDL" id="1g5-FP-Otc"/>
-                                </connections>
-                            </barButtonItem>
                             <barButtonItem id="joc-nr-c04">
                                 <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="hyG-PK-dHr">
-                                    <rect key="frame" x="912" y="6" width="51" height="31"/>
+                                    <rect key="frame" x="955" y="6" width="51" height="31"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <connections>
                                         <action selector="switchChanged:" destination="cvd-FR-XDL" eventType="valueChanged" id="BbG-PT-o2M"/>
                                     </connections>
                                 </switch>
                             </barButtonItem>
+                            <barButtonItem id="259-fr-0LB">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="19w-Iy-FN4">
+                                    <rect key="frame" x="907" y="7" width="40" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="新增"/>
+                                    <connections>
+                                        <action selector="addButtonTouchDown:" destination="cvd-FR-XDL" eventType="touchDown" id="6hI-st-zAQ"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="addButton" destination="Col-fe-aTG" id="yDE-IE-sHX"/>
+                        <outlet property="addButton" destination="19w-Iy-FN4" id="nV4-OP-Ovr"/>
                         <outlet property="collectionView" destination="9Qm-Gs-Ull" id="Cp9-0W-ega"/>
                         <outlet property="flowLayout" destination="COF-Z1-lQ5" id="lOF-tS-5ud"/>
                         <outlet property="switchButton" destination="hyG-PK-dHr" id="hvm-e6-abf"/>
@@ -147,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KrJ-hu-IbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1085" y="-202"/>
+            <point key="canvasLocation" x="1084.5703125" y="-202.34375"/>
         </scene>
         <!--Item-->
         <scene sceneID="z4W-LR-yn0">
@@ -162,7 +167,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VBA-o5-fiD">
-                                <rect key="frame" x="0.0" y="72" width="1024" height="696"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="760"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="hSm-Cg-Ewj">
@@ -179,7 +184,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUK-dn-qZy">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUK-dn-qZy">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="32"/>
@@ -191,7 +196,7 @@
                                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="label" destination="aUK-dn-qZy" id="XKl-9v-b2Q"/>
-                                            <segue destination="duL-1A-nC3" kind="show" identifier="subitem" id="RRO-XA-qcP"/>
+                                            <segue destination="duL-1A-nC3" kind="show" identifier="subitem" id="pW5-dD-Ha1"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -201,32 +206,38 @@
                     </view>
                     <navigationItem key="navigationItem" title="Item" id="QmH-XJ-RIL">
                         <rightBarButtonItems>
-                            <barButtonItem title="新增" id="AGD-tL-VaK">
-                                <connections>
-                                    <action selector="addButtonTapped:" destination="DjQ-jw-4Ta" id="zSB-PH-ALL"/>
-                                </connections>
-                            </barButtonItem>
                             <barButtonItem id="Sxg-lK-mxn">
                                 <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="EFG-dW-gBl">
-                                    <rect key="frame" x="912" y="6" width="51" height="31"/>
+                                    <rect key="frame" x="955" y="6" width="51" height="31"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <connections>
                                         <action selector="swithChanged:" destination="DjQ-jw-4Ta" eventType="valueChanged" id="Xng-7y-i15"/>
                                     </connections>
                                 </switch>
                             </barButtonItem>
+                            <barButtonItem id="a7L-yz-o9a">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sOF-Wg-jhB">
+                                    <rect key="frame" x="907" y="7" width="40" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="新增"/>
+                                    <connections>
+                                        <action selector="addButtonTouchDown:" destination="DjQ-jw-4Ta" eventType="touchDown" id="9VA-jC-Lca"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="sOF-Wg-jhB" id="gMu-JN-n9u"/>
                         <outlet property="collectionView" destination="VBA-o5-fiD" id="7JU-uq-FlR"/>
                         <outlet property="flowLayout" destination="hSm-Cg-Ewj" id="OCL-Z6-xCe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2e-di-ZHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1845" y="-202"/>
+            <point key="canvasLocation" x="1844.5312499999998" y="-202.34375"/>
         </scene>
-        <!--Sub Item View Controller-->
+        <!--SubItem-->
         <scene sceneID="LlV-zg-24Q">
             <objects>
                 <viewController id="duL-1A-nC3" customClass="SubItemViewController" customModule="善善的溝通板" customModuleProvider="target" sceneMemberID="viewController">
@@ -239,7 +250,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IjP-ka-WfF">
-                                <rect key="frame" x="0.0" y="72" width="1024" height="696"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zcf-Fx-qMk">
@@ -256,7 +267,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFh-NN-GJA">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFh-NN-GJA">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="32"/>
@@ -266,16 +277,47 @@
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="label" destination="jFh-NN-GJA" id="N1d-fx-JFQ"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="SubItem" id="uiE-OP-yTi">
+                        <rightBarButtonItems>
+                            <barButtonItem id="fWR-n7-CxN">
+                                <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="9Wf-mz-OwT">
+                                    <rect key="frame" x="955" y="6" width="51" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <connections>
+                                        <action selector="switchChanged:" destination="duL-1A-nC3" eventType="valueChanged" id="DWi-cp-Jc8"/>
+                                    </connections>
+                                </switch>
+                            </barButtonItem>
+                            <barButtonItem id="fon-LL-aRV">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MNL-a6-amB">
+                                    <rect key="frame" x="907" y="7" width="40" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="新增"/>
+                                    <connections>
+                                        <action selector="addButtonTouchDown:" destination="duL-1A-nC3" eventType="touchDown" id="HMa-Dd-GmB"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="MNL-a6-amB" id="DhP-o3-0a5"/>
+                        <outlet property="collectionView" destination="IjP-ka-WfF" id="NhM-44-UnQ"/>
+                        <outlet property="flowLayout" destination="zcf-Fx-qMk" id="x2P-Us-fyk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xvX-3a-YJx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2547.65625" y="-202.34375"/>
+            <point key="canvasLocation" x="2548.2421875" y="-202.34375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yst-p7-Te2">

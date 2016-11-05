@@ -11,7 +11,7 @@ public class RealmDaily: NSObject {
     
     override init() {
         super.init()
-        
+        /*
         let count = self.selectAll().count
         if count == 0 {
             self.add("是")
@@ -26,7 +26,7 @@ public class RealmDaily: NSObject {
             self.add("沒有")
             self.add("喜歡")
             self.add("不喜歡")
-        }
+        }*/
     }
     
     func add(_ itemName:String){
@@ -37,7 +37,9 @@ public class RealmDaily: NSObject {
         let realm = try! Realm()
         
         try! realm.write {
-            realm.add(item)
+            if itemName != "" {
+                realm.add(item)
+            }
         }
     }
     

@@ -15,7 +15,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
-    @IBOutlet weak var addButton: UIBarButtonItem!
+    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var switchButton: UISwitch!
 
     let realmCategory = RealmCategory()
@@ -38,6 +38,8 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         tts = TextToSpeech()
+        addButton.isHidden = true
+
     }
 
     var label = ""
@@ -73,13 +75,15 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         
         if sender.isOn {
             editMode = true
+            addButton.isHidden = false
         } else {
             editMode = false
+            addButton.isHidden = true
         }
-        print(editMode)
     }
     
-    @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
+    @IBAction func addButtonTouchDown(_ sender: UIButton) {
+    
         let addAlertController = UIAlertController(title: "新增", message: "", preferredStyle: .alert)
         
         addAlertController.addTextField {
@@ -194,8 +198,6 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         cell.layer.borderColor = UIColor.white.cgColor
         cell.layer.borderWidth = 3
         
-        //print(categoryLabels[indexPath.row])
-        
         var lableName:String!
         switch(self.mainKey) {
         case "AAC":
@@ -261,7 +263,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
             + flowLayout.sectionInset.right
             + (flowLayout.minimumInteritemSpacing * CGFloat(nbCol - 1))
         let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(nbCol))
-        return CGSize(width: size, height: 200)
+        return CGSize(width: size, height: 220)
     
     }
     
