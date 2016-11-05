@@ -80,20 +80,14 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
-        let addAlertController = UIAlertController(title: "新增",
-                                    message: "",
-                                    preferredStyle: .alert
-                                    )
+        let addAlertController = UIAlertController(title: "新增", message: "", preferredStyle: .alert)
         
         addAlertController.addTextField {
             (textField: UITextField!) -> Void in
             textField.placeholder = "內容"
         }
         
-        let cancelAction = UIAlertAction(
-            title: "取消",
-            style: .cancel,
-            handler: nil)
+        let cancelAction = UIAlertAction( title: "取消", style: .cancel, handler: nil)
         addAlertController.addAction(cancelAction)
         
         let saveAction = UIAlertAction(title: "儲存", style: .default) {
@@ -128,11 +122,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     
   
     func editData(_ id:String, _ name:String){
-        let editAlertController = UIAlertController(title: "修改",
-                                                   message: "",
-                                                   preferredStyle: .alert
-        )
-        
+        let editAlertController = UIAlertController(title: "修改", message: "", preferredStyle: .alert)
         
         editAlertController.addTextField {
             (textField: UITextField!) -> Void in
@@ -141,10 +131,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         }
  
         
-        let cancelAction = UIAlertAction(
-            title: "取消",
-            style: .cancel,
-            handler: nil)
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         editAlertController.addAction(cancelAction)
         
         let editAction = UIAlertAction(title: "修改", style: .default) {

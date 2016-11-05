@@ -48,6 +48,70 @@ class ItemViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
+        let addAlertController = UIAlertController(title: "新增",
+                                                   message: "",
+                                                   preferredStyle: .alert
+        )
+        
+        addAlertController.addTextField {
+            (textField: UITextField!) -> Void in
+            textField.placeholder = "內容"
+        }
+        
+        let cancelAction = UIAlertAction(
+            title: "取消",
+            style: .cancel,
+            handler: nil)
+        addAlertController.addAction(cancelAction)
+        
+        let saveAction = UIAlertAction(title: "儲存", style: .default) {
+            (action: UIAlertAction!) -> Void in
+            let textField = (addAlertController.textFields?.first!)! as UITextField        
+            self.realmItem.add(textField.text!)
+        
+            self.collectionView?.reloadData()
+        }
+        addAlertController.addAction(saveAction)
+        
+        if editMode {
+            self.present(addAlertController, animated: true, completion: nil)
+        }
+
+    }
+
+    func editData(_ id:String, _ name:String){
+        let editAlertController = UIAlertController(title: "修改", message: "", preferredStyle: .alert)
+        
+        editAlertController.addTextField {
+            (textField: UITextField!) -> Void in
+            textField.placeholder = "內容"
+            textField.text = name
+        }
+        
+        
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        editAlertController.addAction(cancelAction)
+        
+        let editAction = UIAlertAction(title: "修改", style: .default) {
+            (action: UIAlertAction!) -> Void in
+            
+            let textField = (editAlertController.textFields?.first!)! as UITextField
+            self.realmItem.update(id, textField.text!)
+            self.collectionView?.reloadData()
+        }
+        editAlertController.addAction(editAction)
+        
+        
+        let deleteAction = UIAlertAction(title: "刪除", style: .destructive) {
+            (action: UIAlertAction!) -> Void in
+            
+            self.realmItem.delete(id)
+            self.collectionView?.reloadData()
+        }
+        editAlertController.addAction(deleteAction)
+        
+        self.present(editAlertController, animated: true, completion: nil)
+        
     }
 
     
@@ -86,6 +150,7 @@ class ItemViewController: UIViewController, UICollectionViewDataSource, UICollec
         
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         var idName:String!
@@ -95,12 +160,10 @@ class ItemViewController: UIViewController, UICollectionViewDataSource, UICollec
         labelName = items![indexPath.row].name
         
         if editMode {
-           // editData(idName, labelName)
+            editData(idName, labelName)
         } else {
             tts.speak(label + labelName)
         }
-        
-        //  performSegue(withIdentifier:"category", sender: self)
         
     }
     
