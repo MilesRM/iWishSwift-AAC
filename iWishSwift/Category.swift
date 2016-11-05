@@ -13,8 +13,8 @@ class Category: Object {
     
     dynamic var id = NSUUID().uuidString
     dynamic var name = ""
-    let order = RealmOptional<Int>()
-    let items = List<Item>()
+    dynamic var order = 0
+    //let items = List<Item>()
     
     override static func primaryKey() -> String? {
         return "id"

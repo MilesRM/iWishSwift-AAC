@@ -1,37 +1,37 @@
 //
-//  RealmDaily.swift
+//  RealmItem.swift
 //  iWishSwift
 //
-//  Created by andycheng on 2016/11/4.
+//  Created by andycheng on 2016/11/5.
 //  Copyright © 2016年 ccjeng. All rights reserved.
 //
 import RealmSwift
 
-public class RealmDaily: NSObject {
+public class RealmItem: NSObject {
     
     override init() {
         super.init()
         
         let count = self.selectAll().count
         if count == 0 {
-            self.add("是")
-            self.add("不是")
-            self.add("對")
-            self.add("不對")
-            self.add("好")
-            self.add("不好")
-            self.add("不知道?")
-            self.add("不確定?")
-            self.add("有")
-            self.add("沒有")
+            self.add("想去")
+            self.add("有去")
+            self.add("想吃")
+            self.add("有吃")
+            self.add("想喝")
+            self.add("有喝")
+            self.add("想聽")
+            self.add("想看")
+            self.add("想講電話")
+            self.add("帶我去")
             self.add("喜歡")
-            self.add("不喜歡")
+            self.add("害怕")
         }
     }
     
     func add(_ itemName:String){
         
-        let item = Daily()
+        let item = Item()
         item.name = itemName
         
         let realm = try! Realm()
@@ -45,7 +45,7 @@ public class RealmDaily: NSObject {
         
         let realm = try! Realm()
         let predicate = NSPredicate(format: "id = %@", id)
-        let item = realm.objects(Daily.self).filter(predicate)
+        let item = realm.objects(Item.self).filter(predicate)
         
         try! realm.write {
             realm.delete(item)
@@ -58,15 +58,15 @@ public class RealmDaily: NSObject {
         let realm = try! Realm()
         
         try! realm.write {
-            realm.create(Daily.self, value: ["id": id, "name": name], update: true)
+            realm.create(Item.self, value: ["id": id, "name": name], update: true)
         }
         
     }
     
-    func selectAll() -> Results<Daily> {
+    func selectAll() -> Results<Item> {
         
         let realm = try! Realm()
         
-        return realm.objects(Daily.self).sorted(byProperty:"datetime", ascending: false)
+        return realm.objects(Item.self).sorted(byProperty:"order")
     }
 }

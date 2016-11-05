@@ -338,7 +338,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
             if segue.identifier == "item" {
                 print("item")
                 if let destViewController = segue.destination as? ItemViewController {
-                    print("categoryView = " + categoryItems![(indexPath?.row)!].name)
+                    //print("categoryView = " + categoryItems![(indexPath?.row)!].name)
                     destViewController.label = categoryItems![(indexPath?.row)!].name
                     destViewController.key = categoryItems![(indexPath?.row)!].id
             }

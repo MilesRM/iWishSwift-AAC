@@ -13,7 +13,7 @@ class Item: Object {
     
     dynamic var id = NSUUID().uuidString
     dynamic var name = ""
-    let order = RealmOptional<Int>()
+    dynamic var order = 0
     let subItems = List<SubItem>()
     
     override static func primaryKey() -> String? {

@@ -25,6 +25,9 @@
 		E08269611DCCB1A6008562B8 /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08269601DCCB1A6008562B8 /* Selection.swift */; };
 		E08269631DCCB21E008562B8 /* RealmSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08269621DCCB21E008562B8 /* RealmSelection.swift */; };
 		E09224D51DBCEF15004718A1 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09224D41DBCEF15004718A1 /* TextCell.swift */; };
+		E0935A4E1DCD80C50055A203 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0935A4D1DCD80C50055A203 /* AVFoundation.framework */; };
+		E0935A501DCD824A0055A203 /* RealmItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0935A4F1DCD824A0055A203 /* RealmItem.swift */; };
+		E0935A521DCD856A0055A203 /* RealmSubItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0935A511DCD856A0055A203 /* RealmSubItem.swift */; };
 		E0AD5B061DCC7E9900D99E47 /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AD5B051DCC7E9900D99E47 /* TextToSpeech.swift */; };
 		E0BA92571DBCD44D00DC4446 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BA92561DBCD44D00DC4446 /* CategoryViewController.swift */; };
 		E0DE42B11DCC1B2700106CCA /* RealmCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DE42B01DCC1B2700106CCA /* RealmCategory.swift */; };
@@ -35,7 +38,7 @@
 		418F1F5F3EA8B7A5FA4B3462 /* Pods-iWishSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iWishSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-iWishSwift/Pods-iWishSwift.release.xcconfig"; sourceTree = "<group>"; };
 		6011E5E6E1DD76A3805C14E1 /* Pods-iWishSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iWishSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iWishSwift/Pods-iWishSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		AD80FA689622538385F84827 /* Pods_iWishSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iWishSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E045C4561DBB6D8D009BDFCE /* iWishSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWishSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E045C4561DBB6D8D009BDFCE /* 善善的溝通板.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "善善的溝通板.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E045C4591DBB6D8D009BDFCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E045C45E1DBB6D8D009BDFCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E045C4601DBB6D8D009BDFCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,6 +57,9 @@
 		E08269601DCCB1A6008562B8 /* Selection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
 		E08269621DCCB21E008562B8 /* RealmSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSelection.swift; sourceTree = "<group>"; };
 		E09224D41DBCEF15004718A1 /* TextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
+		E0935A4D1DCD80C50055A203 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E0935A4F1DCD824A0055A203 /* RealmItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmItem.swift; sourceTree = "<group>"; };
+		E0935A511DCD856A0055A203 /* RealmSubItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSubItem.swift; sourceTree = "<group>"; };
 		E0AD5B051DCC7E9900D99E47 /* TextToSpeech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
 		E0BA92561DBCD44D00DC4446 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		E0DE42B01DCC1B2700106CCA /* RealmCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCategory.swift; sourceTree = "<group>"; };
@@ -65,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0935A4E1DCD80C50055A203 /* AVFoundation.framework in Frameworks */,
 				304AECAE6E7D2A966F4D7779 /* Pods_iWishSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +91,7 @@
 		D23D24C4CAEC6A60368C24BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E0935A4D1DCD80C50055A203 /* AVFoundation.framework */,
 				AD80FA689622538385F84827 /* Pods_iWishSwift.framework */,
 			);
 			name = Frameworks;
@@ -102,7 +110,7 @@
 		E045C4571DBB6D8D009BDFCE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E045C4561DBB6D8D009BDFCE /* iWishSwift.app */,
+				E045C4561DBB6D8D009BDFCE /* 善善的溝通板.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,6 +172,8 @@
 				E082695E1DCCB131008562B8 /* RealmIntroduce.swift */,
 				E08269621DCCB21E008562B8 /* RealmSelection.swift */,
 				E06684CB1DCCD4AD00FB8D60 /* RealmDaily.swift */,
+				E0935A4F1DCD824A0055A203 /* RealmItem.swift */,
+				E0935A511DCD856A0055A203 /* RealmSubItem.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -188,7 +198,7 @@
 			);
 			name = iWishSwift;
 			productName = iWishSwift;
-			productReference = E045C4561DBB6D8D009BDFCE /* iWishSwift.app */;
+			productReference = E045C4561DBB6D8D009BDFCE /* 善善的溝通板.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -296,6 +306,7 @@
 				E08269631DCCB21E008562B8 /* RealmSelection.swift in Sources */,
 				E08269611DCCB1A6008562B8 /* Selection.swift in Sources */,
 				E082695D1DCCB0AB008562B8 /* Introduce.swift in Sources */,
+				E0935A501DCD824A0055A203 /* RealmItem.swift in Sources */,
 				E082695F1DCCB131008562B8 /* RealmIntroduce.swift in Sources */,
 				E048F2B11DBB825E00C16B08 /* Item.swift in Sources */,
 				E048F2B31DBB834700C16B08 /* SubItem.swift in Sources */,
@@ -306,6 +317,7 @@
 				E09224D51DBCEF15004718A1 /* TextCell.swift in Sources */,
 				E06684CA1DCCD41200FB8D60 /* Daily.swift in Sources */,
 				E08269591DCC80FD008562B8 /* Constant.swift in Sources */,
+				E0935A521DCD856A0055A203 /* RealmSubItem.swift in Sources */,
 				E0AD5B061DCC7E9900D99E47 /* TextToSpeech.swift in Sources */,
 				E06684CF1DCCDBC600FB8D60 /* ItemViewController.swift in Sources */,
 				E048F2AF1DBB813600C16B08 /* Category.swift in Sources */,
@@ -443,7 +455,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ccjeng.iWishSwift;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "善善的溝通板";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -460,7 +472,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ccjeng.iWishSwift;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "善善的溝通板";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
