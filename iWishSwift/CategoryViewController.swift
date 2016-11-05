@@ -293,20 +293,24 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
             labelName = ""
             break
         }
-
         
         if editMode {
             editData(idName, labelName)
         } else {
             tts.speak(labelName)
         }
-        /*
-        if mainKey == "AAC" {
-          performSegue(withIdentifier:"category", sender: self)
-        }*/
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.backgroundColor = UIColor.red
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.backgroundColor = UIColor.cyan
+    }
     
     // MARK:- Selected Cell IndexPath
     
