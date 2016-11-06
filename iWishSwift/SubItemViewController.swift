@@ -140,17 +140,20 @@ class SubItemViewController: UIViewController, UICollectionViewDataSource, UICol
     
     // set cell size
     // must set UICollectionViewDelegateFlowLayout
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         let nbCol = 4
         
         let totalSpace = flowLayout.sectionInset.left
             + flowLayout.sectionInset.right
             + (flowLayout.minimumInteritemSpacing * CGFloat(nbCol - 1))
         let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(nbCol))
+    
+
         return CGSize(width: size, height: 220)
         
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         

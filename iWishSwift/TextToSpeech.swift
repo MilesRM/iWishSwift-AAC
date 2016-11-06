@@ -30,10 +30,10 @@ public class TextToSpeech: NSObject {
     
     func speak(_ text:String) {
         utterance = AVSpeechUtterance(string: text)
-        utterance.rate = 0.4
-        utterance.pitchMultiplier = 1.2
-        utterance.postUtteranceDelay = 0.1
-        utterance.volume = 1
+        utterance.rate = 0.5 //朗誦速度
+        utterance.pitchMultiplier = 1.0 //音調 0.5-2.0
+        utterance.postUtteranceDelay = 0.1 //播放下一句之前有短暫時間的暫停
+        utterance.volume = 1 //音量
         utterance.voice = AVSpeechSynthesisVoice(language: "zh-TW")
         if text != "" {
             synth.speak(utterance)

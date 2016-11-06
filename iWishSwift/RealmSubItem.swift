@@ -94,7 +94,7 @@ public class RealmSubItem: NSObject {
                 self.add("帕尼尼", itemId)
                 self.add("披薩", itemId)
                 self.add("墨西哥蓋飯", itemId)
-                self.add("麥當勞兒童參", itemId)
+                self.add("麥當勞兒童餐", itemId)
                 self.add("冰淇淋", itemId)
                 self.add("麵", itemId)
                 self.add("蛋糕", itemId)
