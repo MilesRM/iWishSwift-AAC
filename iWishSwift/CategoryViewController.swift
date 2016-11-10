@@ -30,6 +30,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     let realmDaily = RealmDaily()
     var dailyItems:Results<Daily>!
     
+    let realmFrequency = RealmFrequency()
+    var frequencyItems:Results<Frequency>!
+    
     var editMode:Bool = false
     var tts:TextToSpeech!
 
@@ -65,6 +68,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
                 break
             case "Daily":
                 dailyItems = realmDaily.selectAll()
+                break
+            case "Frequency":
+                frequencyItems = realmFrequency.selectAll()
                 break
             default:
                 break
@@ -111,6 +117,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
             case "Daily":
                 self.realmDaily.add(textField.text!)
                 break
+            case "Frequency":
+                self.realmFrequency.add(textField.text!)
+                break
             default:
                 break
             }
@@ -154,6 +163,8 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
             case "Daily":
                 self.realmDaily.update(id, textField.text!)
                 break
+            case "Frequency":
+                self.realmFrequency.update(id, textField.text!)
             default:
                 break
             }
@@ -177,6 +188,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
                 break
             case "Daily":
                 self.realmDaily.delete(id)
+                break
+            case "Frequency":
+                self.realmFrequency.delete(id)
                 break
             default:
                 break
@@ -212,6 +226,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         case "Daily":
             lableName = dailyItems![indexPath.row].name
             break
+        case "Frequency":
+            lableName = frequencyItems![indexPath.row].name
+            break
         default:
             lableName = ""
             break
@@ -242,6 +259,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         case "Daily":
             cnt = dailyItems.count
             break
+        case "Frequency":
+            cnt = frequencyItems.count;
+            break
         default:
             cnt = 0
             break
@@ -257,6 +277,10 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         
         if mainKey == "Daily" {
             nbCol = 1
+        }
+        
+        if mainKey == "Frequency" {
+            nbCol = 3
         }
         
         let totalSpace = flowLayout.sectionInset.left
@@ -287,6 +311,10 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         case "Daily":
             idName = dailyItems![indexPath.row].id
             labelName = dailyItems![indexPath.row].name
+            break
+        case "Frequency":
+            idName = frequencyItems![indexPath.row].id
+            labelName = frequencyItems![indexPath.row].name
             break
         default:
             idName = ""

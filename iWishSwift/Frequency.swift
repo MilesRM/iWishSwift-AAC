@@ -1,15 +1,15 @@
 //
-//  Category.swift
+//  Frequency.swift
 //  iWishSwift
 //
-//  Created by andycheng on 2016/10/22.
+//  Created by andycheng on 2016/11/10.
 //  Copyright © 2016年 ccjeng. All rights reserved.
 //
 
 import Foundation
 import RealmSwift
 
-class Category: Object {
+class Frequency: Object {
     
     dynamic var id = NSUUID().uuidString
     dynamic var name = ""
