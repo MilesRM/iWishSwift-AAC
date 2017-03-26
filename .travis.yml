@@ -1,5 +1,5 @@
 language: objective-c
 osx_image: xcode8.2
-xcode_project: iWishSwift.xcodeproj
+xcode_project: iWishSwift.xcworkspace
 xcode_scheme: iWishSwift
 xcode_sdk: iphonesimulator9.3
