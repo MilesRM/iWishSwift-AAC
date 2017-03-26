@@ -1,7 +1,7 @@
 # iWish Swift
 
 An iPad AAC (Augmentative and alternative communication) tool for disabilities.
-This app redesign from [iWish Android] (https://github.com/ccjeng/iWish-AAC) which is designed for my child.
+This app redesign from [iWish Android](https://github.com/ccjeng/iWish-AAC) which is designed for my child.
 
 Features:
 * Big Text Size
