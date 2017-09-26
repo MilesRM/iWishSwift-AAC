@@ -3,5 +3,5 @@ platform :ios, '9.0'
 
 target 'iWishSwift' do
   use_frameworks!
-  pod 'RealmSwift'
+  pod 'RealmSwift', '2.10.1'
 end
