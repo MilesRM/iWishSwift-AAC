@@ -10,9 +10,9 @@ import Foundation
 import RealmSwift
 
 class Daily: Object {
-    dynamic var id = NSUUID().uuidString
-    dynamic var name = ""
-    dynamic var datetime = NSDate()
+    @objc dynamic var id = NSUUID().uuidString
+    @objc dynamic var name = ""
+    @objc dynamic var datetime = NSDate()
     
     override static func primaryKey() -> String? {
         return "id"

@@ -16,7 +16,7 @@ class TextCell: UICollectionViewCell {
         }
     }
     
-    func updateUI() {
+    @objc func updateUI() {
         label.lineBreakMode = NSLineBreakMode.byWordWrapping
         label.numberOfLines = 0
     }

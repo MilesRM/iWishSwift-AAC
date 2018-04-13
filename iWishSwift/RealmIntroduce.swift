@@ -25,7 +25,7 @@ public class RealmIntroduce: NSObject {
         }
     }
     
-    func add(_ itemName:String){
+    @objc func add(_ itemName:String){
         
         let item = Introduce()
         item.name = itemName
@@ -39,7 +39,7 @@ public class RealmIntroduce: NSObject {
         }
     }
     
-    func delete(_ id:String) {
+    @objc func delete(_ id:String) {
         
         let realm = try! Realm()
         let predicate = NSPredicate(format: "id = %@", id)
@@ -51,7 +51,7 @@ public class RealmIntroduce: NSObject {
         
     }
     
-    func update(_ id:String, _ name:String) {
+    @objc func update(_ id:String, _ name:String) {
         
         let realm = try! Realm()
         
@@ -65,6 +65,6 @@ public class RealmIntroduce: NSObject {
         
         let realm = try! Realm()
         
-        return realm.objects(Introduce.self).sorted(byProperty:"order")
+        return realm.objects(Introduce.self).sorted(byKeyPath:"order")
     }
 }

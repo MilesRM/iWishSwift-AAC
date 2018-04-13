@@ -29,7 +29,7 @@ public class RealmDaily: NSObject {
         }*/
     }
     
-    func add(_ itemName:String){
+    @objc func add(_ itemName:String){
         
         let item = Daily()
         item.name = itemName
@@ -43,7 +43,7 @@ public class RealmDaily: NSObject {
         }
     }
     
-    func delete(_ id:String) {
+    @objc func delete(_ id:String) {
         
         let realm = try! Realm()
         let predicate = NSPredicate(format: "id = %@", id)
@@ -55,7 +55,7 @@ public class RealmDaily: NSObject {
         
     }
     
-    func update(_ id:String, _ name:String) {
+    @objc func update(_ id:String, _ name:String) {
         
         let realm = try! Realm()
         
@@ -69,6 +69,6 @@ public class RealmDaily: NSObject {
         
         let realm = try! Realm()
         
-        return realm.objects(Daily.self).sorted(byProperty:"datetime", ascending: false)
+        return realm.objects(Daily.self).sorted(byKeyPath:"datetime", ascending: false)
     }
 }

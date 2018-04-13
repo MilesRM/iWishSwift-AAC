@@ -18,23 +18,23 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var switchButton: UISwitch!
 
-    let realmCategory = RealmCategory()
+    @objc let realmCategory = RealmCategory()
     var categoryItems:Results<Category>!
     
-    let realmIntroduce = RealmIntroduce()
+    @objc let realmIntroduce = RealmIntroduce()
     var introduceItems:Results<Introduce>!
     
-    let realmSelection = RealmSelection()
+    @objc let realmSelection = RealmSelection()
     var selectionItems:Results<Selection>!
     
-    let realmDaily = RealmDaily()
+    @objc let realmDaily = RealmDaily()
     var dailyItems:Results<Daily>!
     
-    let realmFrequency = RealmFrequency()
+    @objc let realmFrequency = RealmFrequency()
     var frequencyItems:Results<Frequency>!
     
-    var editMode:Bool = false
-    var tts:TextToSpeech!
+    @objc var editMode:Bool = false
+    @objc var tts:TextToSpeech!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +45,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
 
     }
 
-    var label = ""
-    var key = ""
-    var mainKey = ""
+    @objc var label = ""
+    @objc var key = ""
+    @objc var mainKey = ""
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -134,7 +134,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
   
-    func editData(_ id:String, _ name:String){
+    @objc func editData(_ id:String, _ name:String){
         let editAlertController = UIAlertController(title: "修改", message: "", preferredStyle: .alert)
         
         editAlertController.addTextField {
@@ -342,7 +342,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     
     // MARK:- Selected Cell IndexPath
     
-    func getIndexPathForSelectedCell() -> IndexPath? {
+    @objc func getIndexPathForSelectedCell() -> IndexPath? {
         
         var indexPath:IndexPath?
         

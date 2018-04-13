@@ -13,7 +13,7 @@ public class RealmSubItem: NSObject {
         super.init()
     }
     
-    func add(_ subItemName:String, _ itemId:String){
+    @objc func add(_ subItemName:String, _ itemId:String){
         
         let subItem = SubItem()
         subItem.name = subItemName
@@ -35,7 +35,7 @@ public class RealmSubItem: NSObject {
 
     }
     
-    func delete(_ id:String) {
+    @objc func delete(_ id:String) {
         
         let realm = try! Realm()
         let predicate = NSPredicate(format: "id = %@", id)
@@ -47,7 +47,7 @@ public class RealmSubItem: NSObject {
         
     }
     
-    func update(_ id:String, _ name:String) {
+    @objc func update(_ id:String, _ name:String) {
         
         let realm = try! Realm()
         
@@ -69,7 +69,7 @@ public class RealmSubItem: NSObject {
     }
     
 
-    func initData(_ itemId:String){
+    @objc func initData(_ itemId:String){
     
         let realm = try! Realm()
         let predicate = NSPredicate(format: "id = %@", itemId)

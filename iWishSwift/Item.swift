@@ -11,9 +11,9 @@ import RealmSwift
 
 class Item: Object {
     
-    dynamic var id = NSUUID().uuidString
-    dynamic var name = ""
-    dynamic var order = 0
+    @objc dynamic var id = NSUUID().uuidString
+    @objc dynamic var name = ""
+    @objc dynamic var order = 0
     let subItems = List<SubItem>()
     
     override static func primaryKey() -> String? {

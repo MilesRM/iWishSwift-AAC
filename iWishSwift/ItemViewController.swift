@@ -17,11 +17,11 @@ class ItemViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     @IBOutlet weak var addButton: UIButton!
 
-    let realmItem = RealmItem()
+    @objc let realmItem = RealmItem()
     var items:Results<Item>!
     
-    var editMode:Bool = false
-    var tts:TextToSpeech!
+    @objc var editMode:Bool = false
+    @objc var tts:TextToSpeech!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +31,9 @@ class ItemViewController: UIViewController, UICollectionViewDataSource, UICollec
         addButton.isHidden = true
     }
 
-    var label = ""
-    var key = ""
-    var mainKey = ""
+    @objc var label = ""
+    @objc var key = ""
+    @objc var mainKey = ""
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.title = label
@@ -80,7 +80,7 @@ class ItemViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     }
 
-    func editData(_ id:String, _ name:String){
+    @objc func editData(_ id:String, _ name:String){
         let editAlertController = UIAlertController(title: "修改", message: "", preferredStyle: .alert)
         
         editAlertController.addTextField {
@@ -180,7 +180,7 @@ class ItemViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     // MARK:- Selected Cell IndexPath
     
-    func getIndexPathForSelectedCell() -> IndexPath? {
+    @objc func getIndexPathForSelectedCell() -> IndexPath? {
         
         var indexPath:IndexPath?
         

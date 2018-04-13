@@ -12,10 +12,10 @@ private let reuseIdentifier = "CollectionViewCell"
 
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
-    let mainLabels = Constants.mainLabels
-    let mainKeys = Constants.mainKeys
+    @objc let mainLabels = Constants.mainLabels
+    @objc let mainKeys = Constants.mainKeys
     
-    var tts:TextToSpeech!
+    @objc var tts:TextToSpeech!
     
     @IBOutlet var MainCollectionView: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
@@ -92,7 +92,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     // MARK:- Selected Cell IndexPath
 
-    func getIndexPathForSelectedCell() -> IndexPath? {
+    @objc func getIndexPathForSelectedCell() -> IndexPath? {
         
         var indexPath:IndexPath?
         

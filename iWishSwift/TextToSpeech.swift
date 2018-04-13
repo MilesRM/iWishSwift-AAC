@@ -10,8 +10,8 @@ import AVFoundation
 
 public class TextToSpeech: NSObject {
     
-    let synth = AVSpeechSynthesizer()
-    var utterance = AVSpeechUtterance(string: "")
+    @objc let synth = AVSpeechSynthesizer()
+    @objc var utterance = AVSpeechUtterance(string: "")
     
     override init() {
         super.init()
@@ -28,7 +28,7 @@ public class TextToSpeech: NSObject {
         }
     }
     
-    func speak(_ text:String) {
+    @objc func speak(_ text:String) {
         utterance = AVSpeechUtterance(string: text)
         utterance.rate = 0.5 //朗誦速度
         utterance.pitchMultiplier = 1.0 //音調 0.5-2.0
