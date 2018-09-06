@@ -8,7 +8,7 @@
 
 
 struct Constants {
-    static let  mainLabels = ["溝通","活動(日記)","日常生活常用句","自我介紹(回答)","是不是(選擇)"/*,"文章"*/]
-    static let  mainKeys = ["AAC","Daily","Frequency","Introduce","Selection"/*,"Story"*/]
+    static let  mainLabels = ["溝通","活動(日記)","日常生活常用句","自我介紹(聊天)","是不是(選擇)","文章"]
+    static let  mainKeys = ["AAC","Daily","Frequency","Introduce","Selection","Story"]
     
 }

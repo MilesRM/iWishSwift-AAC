@@ -33,6 +33,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     @objc let realmFrequency = RealmFrequency()
     var frequencyItems:Results<Frequency>!
     
+    @objc let realmStory = RealmStory()
+    var storyItems:Results<Story>!
+    
     @objc var editMode:Bool = false
     @objc var tts:TextToSpeech!
 
@@ -71,6 +74,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
                 break
             case "Frequency":
                 frequencyItems = realmFrequency.selectAll()
+                break
+            case "Story":
+                storyItems = realmStory.selectAll()
                 break
             default:
                 break
@@ -120,6 +126,8 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
             case "Frequency":
                 self.realmFrequency.add(textField.text!)
                 break
+            case "Story":
+                self.realmStory.add(textField.text!)
             default:
                 break
             }
@@ -165,6 +173,8 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
                 break
             case "Frequency":
                 self.realmFrequency.update(id, textField.text!)
+            case "Story":
+                self.realmStory.update(id, textField.text!)
             default:
                 break
             }
@@ -191,6 +201,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
                 break
             case "Frequency":
                 self.realmFrequency.delete(id)
+                break
+            case "Story":
+                self.realmStory.delete(id)
                 break
             default:
                 break
@@ -229,6 +242,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         case "Frequency":
             lableName = frequencyItems![indexPath.row].name
             break
+        case "Story":
+            lableName = storyItems![indexPath.row].name
+            break
         default:
             lableName = ""
             break
@@ -262,6 +278,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         case "Frequency":
             cnt = frequencyItems.count;
             break
+        case "Story":
+            cnt = storyItems.count;
+            break
         default:
             cnt = 0
             break
@@ -278,7 +297,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         if mainKey == "Daily" {
             nbCol = 1
         }
-        
+        if mainKey == "Story" {
+            nbCol = 1
+        }
         if mainKey == "Frequency" {
             nbCol = 3
         }
@@ -315,6 +336,10 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         case "Frequency":
             idName = frequencyItems![indexPath.row].id
             labelName = frequencyItems![indexPath.row].name
+            break
+        case "Story":
+            idName = storyItems![indexPath.row].id
+            labelName = storyItems![indexPath.row].name
             break
         default:
             idName = ""
